@@ -17,7 +17,7 @@ const ExperienceCard = ({
       <p className="text-lg md:text-xl font-semibold text-light-accent dark:text-dark-primary mb-2">
         {companyName}
       </p>
-      <p className="text-base md:text-lg  text-light-color-text dark:text-dark-color-text flex gap-2 items-center mb-2">
+      <p className="text-sm md:text-base   text-light-color-text dark:text-dark-color-text flex gap-2 items-center mb-2">
         <span className="text-light-accent dark:text-dark-primary">
           <CiCalendarDate />
         </span>
@@ -25,7 +25,7 @@ const ExperienceCard = ({
           <span>{from}</span> - <span>{to}</span>
         </div>
       </p>
-      <p className="text-base md:text-lg  text-light-color-text dark:text-dark-color-text flex gap-2 items-center mb-2">
+      <p className="text-sm md:text-base  text-light-color-text dark:text-dark-color-text flex gap-2 items-center mb-2">
         <span className="text-light-accent dark:text-dark-primary">
           <CiLocationOn />
         </span>

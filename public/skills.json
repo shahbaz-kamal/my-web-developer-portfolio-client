@@ -1,0 +1,30 @@
+[
+  {
+    "name": "HTML",
+    "image": "https://i.ibb.co.com/MZ9LksT/html.png"
+  },
+  {
+    "name": "CSS",
+    "image": "https://i.ibb.co.com/1zyXkLr/css-3.png"
+  },
+  {
+    "name": "JavaScript",
+    "image": "https://i.ibb.co.com/4Mvj996/js.png"
+  },
+  {
+    "name": "React",
+    "image": "https://i.ibb.co.com/KL6XByh/react.png"
+  },
+  {
+    "name": "Node.js",
+    "image": "https://i.ibb.co.com/6ZMC66j/nodejs.png"
+  },
+  {
+    "name": "Express.js",
+    "image": "https://i.ibb.co.com/mNTTBgg/express.png"
+  },
+  {
+    "name": "MongoDB",
+    "image": "https://i.ibb.co.com/VQpcJZY/mongoDB.png"
+  }
+]

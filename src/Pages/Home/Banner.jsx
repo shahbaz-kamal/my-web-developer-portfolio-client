@@ -12,12 +12,12 @@ import {
 } from "react-icons/fa";
 import { FaX, FaXTwitter } from "react-icons/fa6";
 const Banner = () => {
-    const downloadRef = useRef();
+  const downloadRef = useRef();
   const handleDownload = () => {
     downloadRef.current.click(); // Trigger the download link click
   };
   return (
-    <div id="banner" className="banner bg-black bg-opacity-60 w-full">
+    <div id="home" className="banner bg-black bg-opacity-60 w-full">
       <div className="max-w-[1320px] mx-auto  px-2 md:px-8   flex gap-6 items-center">
         <div className="hidden md:flex flex-col  gap-2">
           <a
@@ -85,7 +85,10 @@ const Banner = () => {
               the MERN stack. I create responsive web apps focused on user
               experience and business goals. Let's build something great!
             </p>
-            <button onClick={handleDownload} className="relative text-lg md:text-xl flex items-center gap-2 pl-3 rounded-full text-dark-color-text  dark:hover:text-light-color-text transition ease-in-out duration-300 border border-light-accent dark:border-dark-primary group overflow-hidden">
+            <button
+              onClick={handleDownload}
+              className="relative text-lg md:text-xl flex items-center gap-2 pl-3 rounded-full text-dark-color-text  dark:hover:text-light-color-text transition ease-in-out duration-300 border border-light-accent dark:border-dark-primary group overflow-hidden"
+            >
               {/* Background Animation */}
               <span className="absolute inset-0 bg-light-accent dark:bg-dark-primary transform translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></span>
 
@@ -95,11 +98,11 @@ const Banner = () => {
                 <FaDownload />
               </span>
               <a
-            href="/resume.pdf" // Path to your resume file
-            download="Shahbaz_Resume.pdf" // Optional: specify the filename
-            ref={downloadRef} // Using the ref to trigger the download
-            style={{ display: "none" }} // Hide the anchor tag
-          />
+                href="/resume.pdf" // Path to your resume file
+                download="Shahbaz_Resume.pdf" // Optional: specify the filename
+                ref={downloadRef} // Using the ref to trigger the download
+                style={{ display: "none" }} // Hide the anchor tag
+              />
             </button>
             <div className="flex md:hidden mt-4 mb-14 gap-3">
               <a

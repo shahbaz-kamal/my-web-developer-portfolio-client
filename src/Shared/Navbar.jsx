@@ -1,19 +1,113 @@
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.webp";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaDownload } from "react-icons/fa";
 import { CiDark, CiLight } from "react-icons/ci";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
+  const [activeSection, setActiveSection] = useState(""); // Track active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        "home",
+        "about-me",
+        "experience",
+        "education",
+        "skills",
+      ]; // Add all section IDs here
+      let currentSection = "";
+
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Check if the top of the section is exactly 72px from the top of the viewport
+          if (rect.top >= 72 && rect.top <= 73) {
+            currentSection = section;
+          }
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Scroll with 72px offset
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 72, // Subtracting 72px to create offset
+        behavior: "smooth", // Smooth scroll
+      });
+    }
+  };
+  const navigate = useNavigate();
   const links = (
     <>
-      <NavLink to={"/"}>
+      <HashLink
+        to="/#home"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default HashLink behavior
+          scrollToSection("home");
+        }}
+        className={`${
+          activeSection === "home"
+            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
+            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+        }`}
+      >
         <li>Home</li>
-      </NavLink>
-      <NavLink to={"#about-me"}>
+      </HashLink>
+      <HashLink
+        to="#about-me"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default HashLink behavior
+          scrollToSection("about-me");
+        }}
+        className={`${
+          activeSection === "about-me"
+            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
+            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+        }`}
+      >
         <li>About Me</li>
-      </NavLink>
+      </HashLink>
+      <HashLink
+        to="#experience"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default HashLink behavior
+          scrollToSection("experience");
+        }}
+        className={`${
+          activeSection === "experience"
+            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
+            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+        }`}
+      >
+        <li>Experience</li>
+      </HashLink>
+      <HashLink
+        to="#education"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default HashLink behavior
+          scrollToSection("education");
+        }}
+        className={`${
+          activeSection === "education"
+            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
+            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+        }`}
+      >
+        <li>Education</li>
+      </HashLink>
     </>
   );
 
@@ -37,7 +131,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar  md:px-5 mb-6 md:mb-8 lg:mb-10 fixed z-10  bg-opacity-30 bg-black">
+    <div className="navbar h-[72px]  md:px-5 mb-6 md:mb-8 lg:mb-10 fixed z-10  bg-opacity-70 bg-black">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -77,7 +171,10 @@ const Navbar = () => {
       <div className="navbar-end gap-3">
         <label className="flex cursor-pointer gap-2 items-center">
           <span className="label-text text-light-color-text dark:text-dark-color-text transition ease-in-out duration-300">
-            <span className="hidden md:inline-flex text-dark-color-text"> Light</span>
+            <span className="hidden md:inline-flex text-dark-color-text">
+              {" "}
+              Light
+            </span>
             <span className="md:hidden">
               <CiLight size={25} />
             </span>
@@ -89,7 +186,10 @@ const Navbar = () => {
             className="toggle theme-controller text-light-primary dark:text-dark-primary"
           />
           <span className="label-text text-light-color-text dark:text-dark-color-text transition ease-in-out duration-300">
-            <span className="hidden md:inline-flex text-dark-color-text"> dark</span>
+            <span className="hidden md:inline-flex text-dark-color-text">
+              {" "}
+              dark
+            </span>
             <span className="md:hidden">
               <CiDark size={25} />
             </span>

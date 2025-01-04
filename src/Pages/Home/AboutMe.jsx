@@ -5,7 +5,7 @@ const AboutMe = () => {
   return (
     <div
       id="about-me"
-      className="max-w-[1320px] mx-auto px-2 md:px-8 bg-gray-500 bg-opacity-10 rounded-md shadow-md"
+      className="max-w-[1320px] mx-auto px-2 md:px-8 bg-light-secondary dark:bg-dark-secondary bg-opacity-10 dark:bg-opacity-10 rounded-md shadow-md min-h-screen"
     >
       <div className="p-5 md:p-20">
         <div className="border-2 border-light-primary dark:border-dark-primary border-opacity-10 dark:border-opacity-10  rounded-md">
