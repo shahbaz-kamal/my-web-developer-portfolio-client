@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.webp";
 import { NavLink } from "react-router-dom";
 import { FaDownload } from "react-icons/fa";
+import { CiDark, CiLight } from "react-icons/ci";
+import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 
 const Navbar = () => {
   const links = (
@@ -27,8 +29,15 @@ const Navbar = () => {
     }
   }, [isDarkMode]);
 
+  //   download functionality
+  const downloadRef = useRef();
+
+  const handleDownload = () => {
+    downloadRef.current.click(); // Trigger the download link click
+  };
+
   return (
-    <div className="navbar  md:px-5">
+    <div className="navbar  md:px-5 mb-6 md:mb-8 lg:mb-10 fixed z-10  bg-opacity-30 bg-black">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -68,7 +77,10 @@ const Navbar = () => {
       <div className="navbar-end gap-3">
         <label className="flex cursor-pointer gap-2 items-center">
           <span className="label-text text-light-color-text dark:text-dark-color-text transition ease-in-out duration-300">
-            Light
+            <span className="hidden md:inline-flex text-dark-color-text"> Light</span>
+            <span className="md:hidden">
+              <CiLight size={25} />
+            </span>
           </span>
           <input
             onChange={(e) => setIsDarkMode(!isDarkMode)}
@@ -77,11 +89,24 @@ const Navbar = () => {
             className="toggle theme-controller text-light-primary dark:text-dark-primary"
           />
           <span className="label-text text-light-color-text dark:text-dark-color-text transition ease-in-out duration-300">
-            Dark
+            <span className="hidden md:inline-flex text-dark-color-text"> dark</span>
+            <span className="md:hidden">
+              <CiDark size={25} />
+            </span>
           </span>
         </label>
-        <button className="text-lg md:text-xl flex items-center gap-2 py-2 px-3 rounded-full bg-light-accent  hover:bg-light-primary hover:text-white text-light-color-text dark:bg-dark-primary dark:hover:bg-dark-accent dark:hover:text-dark-color-text  transition ease-in-out duration-300 ">
+        <button
+          onClick={handleDownload}
+          className="text-sm md:text-xl flex items-center gap-2 py-2 px-3 rounded-full bg-light-accent  hover:bg-light-primary hover:text-white text-light-color-text dark:bg-dark-primary dark:hover:bg-dark-accent dark:hover:text-dark-color-text  transition ease-in-out duration-300 "
+        >
           Download Resume <FaDownload />
+          {/* Hidden anchor tag to trigger the download */}
+          <a
+            href="/resume.pdf" // Path to your resume file
+            download="Shahbaz_Resume.pdf" // Optional: specify the filename
+            ref={downloadRef} // Using the ref to trigger the download
+            style={{ display: "none" }} // Hide the anchor tag
+          />
         </button>
       </div>
     </div>
