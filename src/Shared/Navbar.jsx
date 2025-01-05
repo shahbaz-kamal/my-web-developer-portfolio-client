@@ -5,9 +5,11 @@ import { FaDownload } from "react-icons/fa";
 import { CiDark, CiLight } from "react-icons/ci";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import { HashLink } from "react-router-hash-link";
+import UseAuth from "../Hooks/UseAuth";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState(""); // Track active section
+  const { user } = UseAuth();
   useEffect(() => {
     const handleScroll = () => {
       const sections = [
@@ -16,6 +18,8 @@ const Navbar = () => {
         "experience",
         "education",
         "skills",
+        "my-project",
+        "contact",
       ]; // Add all section IDs here
       let currentSection = "";
 
@@ -57,6 +61,7 @@ const Navbar = () => {
         onClick={(e) => {
           e.preventDefault(); // Prevent default HashLink behavior
           scrollToSection("home");
+          navigate("/");
         }}
         className={`${
           activeSection === "home"
@@ -71,6 +76,7 @@ const Navbar = () => {
         onClick={(e) => {
           e.preventDefault(); // Prevent default HashLink behavior
           scrollToSection("about-me");
+          navigate("/");
         }}
         className={`${
           activeSection === "about-me"
@@ -85,6 +91,7 @@ const Navbar = () => {
         onClick={(e) => {
           e.preventDefault(); // Prevent default HashLink behavior
           scrollToSection("experience");
+          navigate("/");
         }}
         className={`${
           activeSection === "experience"
@@ -95,10 +102,11 @@ const Navbar = () => {
         <li>Experience</li>
       </HashLink>
       <HashLink
-        to="#education"
+        to="/#education"
         onClick={(e) => {
           e.preventDefault(); // Prevent default HashLink behavior
           scrollToSection("education");
+          navigate("/");
         }}
         className={`${
           activeSection === "education"
@@ -108,6 +116,60 @@ const Navbar = () => {
       >
         <li>Education</li>
       </HashLink>
+      <HashLink
+        to="/#skills"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default HashLink behavior
+          scrollToSection("skills");
+          navigate("/");
+        }}
+        className={`${
+          activeSection === "education"
+            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
+            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+        }`}
+      >
+        <li>Skills</li>
+      </HashLink>
+      <HashLink
+        to="/#my-project"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default HashLink behavior
+          scrollToSection("my-project");
+          navigate("/");
+        }}
+        className={`${
+          activeSection === "my-project"
+            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
+            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+        }`}
+      >
+        <li>Projects</li>
+      </HashLink>
+      <HashLink
+        to="/#contact"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default HashLink behavior
+          scrollToSection("contact");
+          navigate("/");
+        }}
+        className={`${
+          activeSection === "my-project"
+            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
+            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+        }`}
+      >
+        <li>Contact</li>
+      </HashLink>
+
+      {/* Only for me */}
+      {user && user?.email === "shahbazkamal384@gmail.com" ? (
+        <NavLink to={"add-project"}>
+          <li className="text-white"> Add project</li>
+        </NavLink>
+      ) : (
+        ""
+      )}
     </>
   );
 
