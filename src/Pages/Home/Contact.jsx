@@ -57,7 +57,7 @@ const Contact = () => {
                 />
               </div>
 
-              <div className="form-control col-span-2">
+              <div className="form-control md:col-span-2">
                 <textarea
                   name="message"
                   placeholder="Message"
@@ -67,7 +67,7 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <div className="form-control mt-6 col-span-2">
+              <div className="form-control mt-6 md:col-span-2">
                 <button className="py-2 font-bold bg-light-accent text-light-color-text dark:bg-dark-primary hover:bg-light-primary hover:text-dark-color-text dark:hover:bg-dark-accent rounded-full transition duration-300 ease-in-out">
                   Send me Message
                 </button>

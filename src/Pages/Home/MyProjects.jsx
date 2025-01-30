@@ -11,12 +11,12 @@ const MyProjects = () => {
   }, []);
   console.log(projects);
   return (
-    <div id="my-project" className="max-w-[1320px] mx-auto px-3">
+    <div id="my-project" className=" mx-auto px-3">
       <header>
         <Title title={"My Projects"}></Title>
       </header>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.slice(0, 3).map((project) => (
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+        {projects.map((project) => (
           <ProjectCard key={project._id} project={project}></ProjectCard>
         ))}
       </section>

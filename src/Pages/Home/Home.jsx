@@ -13,22 +13,22 @@ const Home = () => {
       <section className="">
         <Banner></Banner>
       </section>
-      <section className="px-2 md:px-0">
+      <section className=" px-2 md:px-0">
         <AboutMe></AboutMe>
       </section>
-      <section className="max-w-[1320px] mx-auto px-2 md:px-0">
+      <section className="w-11/12 md:w-10/12 mx-auto px-2 md:px-0">
         <Experience></Experience>
       </section>
-      <section className="max-w-[1320px] mx-auto px-2 md:px-0">
+      <section className="w-11/12 md:w-10/12 mx-auto px-2 md:px-0">
         <Education></Education>
       </section>
-      <section className="max-w-[1320px] mx-auto px-2 md:px-0">
+      <section className="w-11/12 md:w-10/12 mx-auto px-2 md:px-0">
         <Skills></Skills>
       </section>
-      <section className="max-w-[1320px] mx-auto px-2 md:px-0">
+      <section className="w-11/12 md:w-10/12 mx-auto px-2 md:px-0">
         <MyProjects></MyProjects>
       </section>
-      <section className="max-w-[1320px] mx-auto px-3 ">
+      <section className="w-11/12 md:w-10/12 mx-auto px-3 ">
         <Contact></Contact>
       </section>
     </div>

@@ -55,40 +55,29 @@ const ProjectCard = ({ project }) => {
         <p className=" text-light-color-text dark:text-dark-color-text">
           {projectDescription}
         </p>
-        <p>
-          <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
-            Live Link :
-          </span>
+        <div className="flex justify-center items-center mb-6 flex-wrap gap-4">
           <a href={liveLink} target="_blank">
-            <span className="italic underline text-light-primary dark:text-dark-primary">
-              {liveLink}
-            </span>
+            <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+              Live Link
+            </button>
           </a>
-        </p>
-        <p>
-          <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
-            Github Client Repo :
-          </span>
           <a href={clientGitRepo} target="_blank">
-            <span className="italic underline text-light-primary dark:text-dark-primary">
-              {clientGitRepo}
-            </span>
+            <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+              {" "}
+              Git Client
+            </button>
           </a>
-        </p>
-        <p>
-          <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
-            Github Server Repo :
-          </span>
           <a href={serverGitRepo} target="_blank">
-            {" "}
-            <span className="italic underline text-light-primary dark:text-dark-primary">
-              {serverGitRepo}
-            </span>
+            <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+              {" "}
+              Git Server
+            </button>
           </a>
-        </p>
-        <div className="card-actions justify-end">
+        </div>
+
+        <div className="card-actions justify-center">
           <Link to={`/view-details/${_id}`}>
-            <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-primary hover:border-light-primary hover:text-dark-color-text dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+            <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
               View Details
             </button>
           </Link>

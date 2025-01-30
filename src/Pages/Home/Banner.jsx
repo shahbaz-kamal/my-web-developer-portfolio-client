@@ -18,8 +18,8 @@ const Banner = () => {
   };
   return (
     <div id="home" className="banner bg-black bg-opacity-60 w-full">
-      <div className="max-w-[1320px] mx-auto  px-2 md:px-8   flex gap-6 items-center">
-        <div className="hidden md:flex flex-col  gap-2">
+      <div className="w-11/12 md:w-10/12 mx-auto  px-2 md:px-8   flex lg:gap-14 items-center">
+        <div className="hidden lg:flex flex-col  gap-2">
           <a
             href="https://github.com/shahbaz-kamal"
             target="_blank"
@@ -69,18 +69,18 @@ const Banner = () => {
             </div>
           </a>
         </div>
-        <div className="flex flex-col-reverse md:flex-row  md:justify-around lg:flex-grow items-center gap-4  w-full ">
-          <div className="md:py-36 flex flex-col items-center  md:items-start md:gap-2 mx-auto md:mx-0 ">
+        <div className="flex flex-col-reverse lg:flex-row  lg:justify-between lg:flex-grow items-center gap-4  w-full ">
+          <div className=" lg:py-36 flex flex-col items-center  lg:items-start gap-2 mx-auto lg:mx-0 ">
             <h1 className="text-dark-color-text text-xl md:text-3xl  font-semibold ">
               Hello, <span className="text-dark-color-text">I'm</span>
             </h1>
-            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-light-accent to-light-primary dark:from-dark-accent dark:to-dark-primary text-3xl md:text-[40px] font-cinzel font-bold text-center md:text-start ">
+            <h3 className=" text-transparent bg-clip-text bg-gradient-to-r from-light-accent to-light-primary dark:from-dark-accent dark:to-dark-primary text-3xl md:text-[34px] lg:text-[40px] font-cinzel font-bold text-center lg:text-start ">
               Md. Shahbaz Kamal Chowdhury
             </h3>
-            <p className="text-dark-color-text text-2xl md:text-4xl font-cinzel mb-3">
+            <p className="text-dark-color-text text-2xl md:text-[32px] lg:text-4xl font-cinzel mb-3">
               Web Developer
             </p>
-            <p className="max-w-[500px] text-dark-color-text mb-4 text-center md:text-start">
+            <p className="max-w-[500px] text-dark-color-text mb-4 text-center lg:text-start">
               A passionate web developer skilled in HTML, CSS, JavaScript, and
               the MERN stack. I create responsive web apps focused on user
               experience and business goals. Let's build something great!
@@ -104,7 +104,7 @@ const Banner = () => {
                 style={{ display: "none" }} // Hide the anchor tag
               />
             </button>
-            <div className="flex md:hidden mt-4 mb-14 gap-3">
+            <div className="flex lg:hidden mt-4 mb-14 gap-3">
               <a
                 href="https://github.com/shahbaz-kamal"
                 target="_blank"
@@ -155,14 +155,14 @@ const Banner = () => {
               </a>
             </div>
           </div>
-          <div className="hidden md:inline-flex md:self-end lg:rounded-none md:h-[420px] ">
+          <div className="hidden lg:inline-flex lg:self-end lg:rounded-none lg:h-[420px] ">
             <img
               className="h-full w-full object-cover"
               src={shahbazImage}
               alt=""
             />
           </div>
-          <div className="mt-32 md:hidden border-4 border-neutral  bg-[#a2d8d8] rounded-full w-80 h-80 px-2">
+          <div className="mt-32 lg:hidden border-4 border-neutral  bg-[#a2d8d8] rounded-full w-80 h-80 px-2">
             <img
               className="rounded-full h-full w-full  object-cover "
               src={shahbazImageSmall}

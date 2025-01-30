@@ -28,7 +28,7 @@ const Navbar = () => {
         if (element) {
           const rect = element.getBoundingClientRect();
           // Check if the top of the section is exactly 72px from the top of the viewport
-          if (rect.top >= 72 && rect.top <= 73) {
+          if (rect.top >= 109 && rect.top <= 110) {
             currentSection = section;
           }
         }
@@ -48,7 +48,7 @@ const Navbar = () => {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 72, // Subtracting 72px to create offset
+        top: element.offsetTop - 110, // Subtracting 72px to create offset
         behavior: "smooth", // Smooth scroll
       });
     }
@@ -193,7 +193,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar h-[72px]  md:px-5 mb-6 md:mb-8 lg:mb-10 fixed z-10  bg-opacity-70 bg-black">
+    <div className="w-11/12 md:w-10/12 mx-auto navbar   md:px-5 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
