@@ -194,7 +194,7 @@ const Navbar = () => {
 
   return (
     <div className="w-11/12 md:w-10/12 mx-auto navbar   md:px-5 ">
-      <div className="navbar-start">
+      <div className="navbar-start inline-flex">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -230,7 +230,7 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-3">{links}</ul>
       </div>
-      <div className="navbar-end gap-3">
+      <div className="navbar-end flex-groq gap-3">
         <label className="flex cursor-pointer gap-2 items-center">
           <span className="label-text text-light-color-text dark:text-dark-color-text transition ease-in-out duration-300">
             <span className="hidden md:inline-flex text-dark-color-text">
@@ -261,7 +261,7 @@ const Navbar = () => {
           onClick={handleDownload}
           className="text-sm md:text-xl flex items-center gap-2 py-2 px-3 rounded-full bg-light-accent  hover:bg-light-primary hover:text-white text-light-color-text dark:bg-dark-primary dark:hover:bg-dark-accent dark:hover:text-dark-color-text  transition ease-in-out duration-300 "
         >
-          Download Resume <FaDownload />
+        Resume <FaDownload />
           {/* Hidden anchor tag to trigger the download */}
           <a
             href="/resume.pdf" // Path to your resume file

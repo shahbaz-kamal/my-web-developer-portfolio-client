@@ -6,7 +6,7 @@ const Education = () => {
   return (
     <div id="education">
       <header>
-        <Title title={"Education"}></Title>
+        <Title title={"Education"} subTitle={"My Academic Path"}></Title>
       </header>
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <EducationCard

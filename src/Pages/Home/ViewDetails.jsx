@@ -43,7 +43,7 @@ const ViewDetails = () => {
     ? parse(publicationDate, "yyyy-MM-dd", new Date())
     : null;
   return (
-    <div className="pt-[72px] max-w-[1320px] mx-auto">
+    <div className="pt-32 w-11/12 md:w-10/12 mx-auto">
       <header>
         <Title title={"Project Details"}></Title>
       </header>

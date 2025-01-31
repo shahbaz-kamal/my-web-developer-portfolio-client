@@ -6,7 +6,7 @@ const Experience = () => {
   return (
     <div id="experience">
       <header>
-        <Title title={"Work Experience"}></Title>
+        <Title title={"Work Experience"} subTitle={"Hands-On Experience"}></Title>
       </header>
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <ExperienceCard

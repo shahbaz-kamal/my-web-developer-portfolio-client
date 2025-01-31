@@ -9,7 +9,7 @@ import Contact from "./Contact";
 
 const Home = () => {
   return (
-    <div className="space-y-6 md:space-y-8 lg:space-y-10">
+    <div className="space-y-8 md:space-y-10 lg:space-y-14">
       <section className="">
         <Banner></Banner>
       </section>
