@@ -21,6 +21,7 @@ import { Link } from "react-router-dom";
 import { format, isValid, parse, parseISO } from "date-fns";
 import DetailsSlide from "./DetailsSlide";
 import "swiper/css/effect-cards";
+import { MdOutlinePublish } from "react-icons/md";
 
 const ViewDetails = () => {
   const [project, setProject] = useState([]);
@@ -71,7 +72,7 @@ const ViewDetails = () => {
       <header>
         <Title title={"Project Details"} subTitle={projectTitle}></Title>
       </header>
-      <section className="flex flex-col gap-6 p-4 bg-light-primary-20 dark:bg-dark-primary-20 rounded-lg">
+      <section className="flex flex-col gap-6 p-4 bg-base-200 dark:bg-dark-primary-20 rounded-lg">
         {/* Images */}
         <div className="rounded-lg flex items-center justify-center overflow-hidden  mx-auto">
           <Swiper
@@ -127,70 +128,68 @@ const ViewDetails = () => {
         </div>
         {/* descriptions */}
         <div className="card-body w-full">
-          <h2 className="card-title text-light-color-text dark:text-dark-color-text">
+          <h2 className="card-title text-light-color-text dark:text-dark-color-text text-lg md:text-2xl">
             {projectTitle}
           </h2>
-          <p className=" text-light-color-text dark:text-dark-color-text">
+          <p className=" text-light-color-text dark:text-dark-color-text text base md:text-lg">
             {projectDescription}
           </p>
           <div className="w-full flex flex-col lg:flex-row gap-3">
-            <p className="lg:w-1/2">
-              <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
-                Live Link :
-              </span>
-              <a href={liveLink} target="_blank">
-                <span className="italic underline text-light-primary dark:text-dark-primary">
-                  {liveLink}
-                </span>
-              </a>
-            </p>
-            <p className="">
-              <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
-                Publication Date:
-              </span>
-              <span className=" text-light-primary dark:text-dark-primary">
-                {/* {format(new Date(publicationDate), "PPP")} */}{" "}
-                {publicationDate
-                  ? format(new Date(publicationDate), "PP")
-                  : "N/A"}
-              </span>
-            </p>
+            <div className="flex items-center gap-3 w-full justify-center flex-wrap md:flex-nowrap">
+              <div>
+                <a href={liveLink} target="_blank">
+                  <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+                    Live Link
+                  </button>
+                </a>
+              </div>
+              <div>
+                {" "}
+                <a href={clientGitRepo} target="_blank">
+                  <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+                    {" "}
+                    Git Client
+                  </button>
+                </a>
+              </div>
+              <div>
+                <a href={serverGitRepo} target="_blank">
+                  <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+                    {" "}
+                    Git Server
+                  </button>
+                </a>
+              </div>
+              <div>
+                {" "}
+                <p className="">
+                  <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
+                    Publication Date:
+                  </span>
+                  <span className=" text-light-primary dark:text-dark-primary">
+                    {/* {format(new Date(publicationDate), "PPP")} */}{" "}
+                    {publicationDate
+                      ? format(new Date(publicationDate), "PP")
+                      : "N/A"}
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
 
           <p>
-            <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
-              Github Client Repo :
-            </span>
-            <a href={clientGitRepo} target="_blank">
-              <span className="italic underline text-light-primary dark:text-dark-primary">
-                {clientGitRepo}
-              </span>
-            </a>
-          </p>
-          <p>
-            <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
-              Github Server Repo :
-            </span>
-            <a href={serverGitRepo} target="_blank">
-              {" "}
-              <span className="italic underline text-light-primary dark:text-dark-primary">
-                {serverGitRepo}
-              </span>
-            </a>
-          </p>
-          <p>
-            <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
+            <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-xl">
               Difficulty Faced :
             </span>
-            <span className=" text-light-color-text dark:text-dark-color-text">
+            <span className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
               {struggle}
             </span>
           </p>
           <p>
-            <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
+            <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-xl">
               Lackings:
             </span>
-            <span className=" text-light-color-text dark:text-dark-color-text">
+            <span className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
               {lackings}
             </span>
           </p>
