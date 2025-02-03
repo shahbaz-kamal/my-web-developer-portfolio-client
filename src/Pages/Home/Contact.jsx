@@ -3,9 +3,12 @@ import Title from "../../Component/Title";
 import { CiLocationOn } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
+import Swal from "sweetalert2";
 
 const Contact = () => {
   const [other, setOther] = useState(false);
+  const axiosSecure = UseAxiosSecure();
   const handleSelectChange = (e) => {
     if (e.target.value === "Other") {
       setOther(true);
@@ -29,6 +32,21 @@ const Contact = () => {
 
     const newMessage = { name, email, phone, subject, message, category };
     console.log(newMessage);
+    const res = await axiosSecure.post("messages", newMessage);
+    if (res.data.insertedId) {
+      Swal.fire({
+        title:
+          "Thank you for reaching out! Your message has been successfully sent. I’ll review it and get back to you as soon as possible.",
+        icon: "success",
+        draggable: true,
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong! Please Try Again Later",
+      });
+    }
   };
   return (
     <div id="contact" className="pt-5 pb-10">
@@ -106,7 +124,9 @@ const Contact = () => {
                     Custom Web Application Development
                   </option>
                   {/* <option value="api-dev">API Development</option> */}
-                  <option value="Full-stack Development">Full-stack Development</option>
+                  <option value="Full-stack Development">
+                    Full-stack Development
+                  </option>
                   <option value=" Single Page Application (SPA) Development">
                     Single Page Application (SPA) Development
                   </option>

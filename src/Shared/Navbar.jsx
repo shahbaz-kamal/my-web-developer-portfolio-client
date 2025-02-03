@@ -6,6 +6,7 @@ import { CiDark, CiLight } from "react-icons/ci";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import { HashLink } from "react-router-hash-link";
 import UseAuth from "../Hooks/UseAuth";
+import UseMessages from "../Hooks/UseMessages";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState(""); // Track active section
@@ -54,6 +55,10 @@ const Navbar = () => {
     }
   };
   const navigate = useNavigate();
+  const { messageData, refetchMessageData } = UseMessages();
+  const filteredMessageData = messageData.filter(
+    (message) => message.isRead === false
+  );
   const links = (
     <>
       <HashLink
@@ -172,7 +177,10 @@ const Navbar = () => {
       )}
       {user && user?.email === "shahbazkamal384@gmail.com" ? (
         <NavLink to={"/message"}>
-          <li className="text-white"> Message</li>
+          <li className="text-white">
+            {" "}
+            Message ({`${filteredMessageData.length}`})
+          </li>
         </NavLink>
       ) : (
         ""
@@ -268,7 +276,7 @@ const Navbar = () => {
           onClick={handleDownload}
           className="text-sm md:text-xl flex items-center gap-2 py-2 px-3 rounded-full bg-light-accent  hover:bg-light-primary hover:text-white text-light-color-text dark:bg-dark-primary dark:hover:bg-dark-accent dark:hover:text-dark-color-text  transition ease-in-out duration-300 "
         >
-        Resume <FaDownload />
+          Resume <FaDownload />
           {/* Hidden anchor tag to trigger the download */}
           <a
             href="/resume.pdf" // Path to your resume file
