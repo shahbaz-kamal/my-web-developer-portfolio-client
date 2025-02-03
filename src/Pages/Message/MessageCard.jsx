@@ -2,11 +2,21 @@ import React from "react";
 import { FaCheckDouble } from "react-icons/fa";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 import Swal from "sweetalert2";
+import { format } from "date-fns";
 
 const MessageCard = ({ singleMessage, index, refetchMessageData }) => {
   const axiosSecure = UseAxiosSecure();
-  const { _id, name, email, phone, subject, message, category, isRead } =
-    singleMessage;
+  const {
+    _id,
+    name,
+    email,
+    phone,
+    subject,
+    message,
+    category,
+    isRead,
+    timeStamp,
+  } = singleMessage;
   const handleUpdate = async (_id) => {
     console.log(_id);
     const res = await axiosSecure.patch(`message/${_id}`);
@@ -26,6 +36,11 @@ const MessageCard = ({ singleMessage, index, refetchMessageData }) => {
         <h3 className="text-lg font-semibold text-light-primary dark:text-dark-primary">
           Message #{index + 1}
         </h3>
+        <p className="text-light-color-text dark:text-dark-color-text">
+          <strong>Date:</strong>{" "}
+          {timeStamp ? format(new Date(timeStamp), "PPpp") : "N/A"} <span> </span>
+          {timeStamp ? format(new Date(timeStamp), "zzzz") : "N/A"}
+        </p>
         <p className="text-light-color-text dark:text-dark-color-text">
           <strong>Name:</strong> {name}
         </p>
@@ -47,12 +62,12 @@ const MessageCard = ({ singleMessage, index, refetchMessageData }) => {
         <div className="flex justify-end items-center gap-4">
           <div className="text-right">
             {isRead ? (
-             <button
-             disabled
-             className="bg-light-accent text-light-color-text dark:bg-dark-accent dark:text-dark-color-text py-1 px-4 rounded-lg opacity-50 cursor-not-allowed"
-           >
-             Seen By Me
-           </button>
+              <button
+                disabled
+                className="bg-light-accent text-light-color-text dark:bg-dark-accent dark:text-dark-color-text py-1 px-4 rounded-lg opacity-50 cursor-not-allowed"
+              >
+                Seen By Me
+              </button>
             ) : (
               <button
                 onClick={() => handleUpdate(_id)}
