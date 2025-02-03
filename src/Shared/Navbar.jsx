@@ -170,6 +170,13 @@ const Navbar = () => {
       ) : (
         ""
       )}
+      {user && user?.email === "shahbazkamal384@gmail.com" ? (
+        <NavLink to={"/message"}>
+          <li className="text-white"> Message</li>
+        </NavLink>
+      ) : (
+        ""
+      )}
     </>
   );
 

@@ -5,6 +5,7 @@ import Login from "../Pages/Auth/Login/Login";
 import AddProject from "../Pages/AddProject/AddProject";
 import PrivateRoute from "./PrivateRoute";
 import ViewDetails from "../Pages/Home/ViewDetails";
+import Message from "../Pages/Message/Message";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      { path: "/message", element: <Message></Message> },
       { path: "/view-details/:id", element: <ViewDetails></ViewDetails> },
     ],
   },

@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
-
+import './ProjectCard.css'
 const ProjectCard = ({ project }) => {
   const {
     _id,
@@ -24,7 +24,7 @@ const ProjectCard = ({ project }) => {
   console.log(cardImages)
   return (
     <div className="card bg-base-200  dark:bg-dark-primary dark:bg-opacity-20  shadow-xl">
-      <figure className="p-6 rounded-md">
+      <figure className="px-6 pt-0 rounded-md">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -33,7 +33,7 @@ const ProjectCard = ({ project }) => {
             clickable: true,
           }}
           //   navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Pagination]}
           className="mySwiper"
         >
           {/* {project?project.map((singleProject,index)=><SwiperSlide key={singleProject._id} image_1={}></SwiperSlide>):} */}
@@ -44,15 +44,7 @@ const ProjectCard = ({ project }) => {
                 </SwiperSlide>
               ))
             : ""}
-          {/* <SwiperSlide>
-            <img className="rounded-xl" src={cardImages[0]} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className="rounded-xl" src={cardImages[1]} alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className="rounded-xl" src={cardImages[2]} alt="" />
-          </SwiperSlide>{" "} */}
+       
         </Swiper>
       </figure>
       <div className="card-body">
