@@ -14,37 +14,19 @@ const Skills = () => {
   }, []);
 
   return (
-    <div id="skills">
+    <div id="skills" className="w-11/12 md:w-10/12 mx-auto">
       <header>
-        <Title title={"My Skills"}></Title>
+        <Title title={"My Skills"} subTitle={"Skill Set Overview"}></Title>
       </header>
-      <section className="space-y-6 md:space-y-8">
+      <section className="space-y-6 md:space-y-8  ">
         {/* Excelent div*/}
-        <div className="flex flex-col gap-2 md:flex-row justify-around items-center">
-          <div>
-            <p className="font-bold text-light-primary text-xl md:text-2xl">
-              Excellent
-            </p>
-          </div>
-          <div className="flex gap-3">
-            {skills.slice(0, 4).map((skill, index) => (
-              <SkillsCard key={index} skill={skill}></SkillsCard>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
+          {skills.map((skill, index) => (
+            <SkillsCard key={index} skill={skill}></SkillsCard>
+          ))}
         </div>
+
         {/* Exploring div*/}
-        <div className="flex flex-col gap-2 md:flex-row justify-around items-center">
-          <div>
-            <p className="font-bold text-light-primary text-xl md:text-2xl">
-              Exploring
-            </p>
-          </div>
-          <div className="flex gap-3">
-            {skills.slice(4, 8).map((skill, index) => (
-              <SkillsCard key={index} skill={skill}></SkillsCard>
-            ))}
-          </div>
-        </div>
       </section>
     </div>
   );

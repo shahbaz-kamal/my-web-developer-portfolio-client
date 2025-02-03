@@ -13,9 +13,7 @@ const ProjectCard = ({ project }) => {
     _id,
     projectTitle,
     projectDescription,
-    image_1,
-    image_2,
-    image_3,
+    cardImages,
     liveLink,
     clientGitRepo,
     serverGitRepo,
@@ -23,6 +21,7 @@ const ProjectCard = ({ project }) => {
     lackings,
     publicationDate,
   } = project;
+  console.log(cardImages)
   return (
     <div className="card bg-base-200  dark:bg-dark-primary dark:bg-opacity-20  shadow-xl">
       <figure className="p-6 rounded-md">
@@ -37,15 +36,23 @@ const ProjectCard = ({ project }) => {
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <img className="rounded-xl" src={image_1} alt="" />
+          {/* {project?project.map((singleProject,index)=><SwiperSlide key={singleProject._id} image_1={}></SwiperSlide>):} */}
+          {cardImages
+            ? cardImages.map((item, index) => (
+                <SwiperSlide key={index} item={item}>
+                  <img className="rounded-xl" src={item} alt="" />
+                </SwiperSlide>
+              ))
+            : ""}
+          {/* <SwiperSlide>
+            <img className="rounded-xl" src={cardImages[0]} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className="rounded-xl" src={image_2} alt="" />
+            <img className="rounded-xl" src={cardImages[1]} alt="" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className="rounded-xl" src={image_3} alt="" />
-          </SwiperSlide>{" "}
+            <img className="rounded-xl" src={cardImages[2]} alt="" />
+          </SwiperSlide>{" "} */}
         </Swiper>
       </figure>
       <div className="card-body">

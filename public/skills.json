@@ -1,30 +1,47 @@
 [
   {
     "name": "HTML",
-    "image": "https://i.ibb.co.com/MZ9LksT/html.png"
+    "image": "https://i.ibb.co.com/MZ9LksT/html.png",
+    "image_dark": "https://i.ibb.co.com/vCjfBj5V/html-dark.png"
   },
   {
     "name": "CSS",
-    "image": "https://i.ibb.co.com/1zyXkLr/css-3.png"
+    "image": "https://i.ibb.co.com/1zyXkLr/css-3.png",
+    "image_dark": "https://i.ibb.co.com/sJvt0j1s/css-dark.png"
+  },
+  {
+    "name": "TailWind CSS",
+    "image": "https://i.ibb.co.com/XkWsbQDL/tailwind.png",
+    "image_dark": "https://i.ibb.co.com/bjm3LDzk/tailwind-dark.png"
   },
   {
     "name": "JavaScript",
-    "image": "https://i.ibb.co.com/4Mvj996/js.png"
+    "image": "https://i.ibb.co.com/4Mvj996/js.png",
+    "image_dark": "https://i.ibb.co.com/4RwvC7Q1/js-dark.png"
+  },
+  {
+    "name": "Firebase",
+    "image": "https://i.ibb.co.com/C5hww77M/firebase.png",
+    "image_dark": "https://i.ibb.co.com/99JwhJkD/firebase-dark.png"
   },
   {
     "name": "React",
-    "image": "https://i.ibb.co.com/KL6XByh/react.png"
+    "image": "https://i.ibb.co.com/KL6XByh/react.png",
+    "image_dark": "https://i.ibb.co.com/27YDd1cW/react-dark.png"
   },
   {
     "name": "Node.js",
-    "image": "https://i.ibb.co.com/6ZMC66j/nodejs.png"
+    "image": "https://i.ibb.co.com/6ZMC66j/nodejs.png",
+    "image_dark": "https://i.ibb.co.com/LhxtGMXB/node-dark.png"
   },
   {
     "name": "Express.js",
-    "image": "https://i.ibb.co.com/mNTTBgg/express.png"
+    "image": "https://i.ibb.co.com/6JyLGWnk/express-color.png",
+    "image_dark": "https://i.ibb.co.com/CpLF1T1W/express-dark.png"
   },
   {
     "name": "MongoDB",
-    "image": "https://i.ibb.co.com/VQpcJZY/mongoDB.png"
+    "image": "https://i.ibb.co.com/VQpcJZY/mongoDB.png",
+    "image_dark": "https://i.ibb.co.com/PGVwVPD6/mongo-DB-dark.png"
   }
 ]

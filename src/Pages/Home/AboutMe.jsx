@@ -5,12 +5,12 @@ const AboutMe = () => {
   return (
     <div
       id="about-me"
-      className="w-11/12 md:w-10/12 mx-auto px-2 md:px-8 bg-light-secondary dark:bg-dark-secondary bg-opacity-10 dark:bg-opacity-10 rounded-md shadow-md "
+      className="w-11/12 md:w-10/12 mx-auto  bg-light-secondary dark:bg-dark-secondary bg-opacity-10 dark:bg-opacity-10 rounded-md shadow-md "
     >
-      <div className="p-5 md:p-20">
-        <div className="border-2 border-light-primary dark:border-dark-primary border-opacity-10 dark:border-opacity-10  rounded-md">
-          <header className="mt-3">
-            <Title title={"About Me"}></Title>
+      <div className="p-6 md:p-10">
+        <div className="p-6 border-2 border-light-primary dark:border-dark-primary border-opacity-10 dark:border-opacity-10  rounded-md">
+          <header className="">
+            <Title title={"About Me"} subTitle={"A Glimpse Into My Journey"}></Title>
           </header>
           <section>
             <p className="px-4 text-light-color-text dark:text-dark-color-text text-base md:text-lg opacity-80">

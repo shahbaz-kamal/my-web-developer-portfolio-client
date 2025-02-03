@@ -1,17 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import "./ViewDetails.css";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css/effect-coverflow";
+
+import {
+  Pagination,
+  Navigation,
+  EffectCards,
+  EffectCoverflow,
+} from "swiper/modules";
 import { useParams } from "react-router-dom";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 import Title from "../../Component/Title";
 import { Link } from "react-router-dom";
-import { format, isValid, parse } from "date-fns";
+import { format, isValid, parse, parseISO } from "date-fns";
+import DetailsSlide from "./DetailsSlide";
+import "swiper/css/effect-cards";
 
 const ViewDetails = () => {
   const [project, setProject] = useState([]);
@@ -28,9 +37,7 @@ const ViewDetails = () => {
     _id,
     projectTitle,
     projectDescription,
-    image_1,
-    image_2,
-    image_3,
+    imageAndDescriptions,
     liveLink,
     clientGitRepo,
     serverGitRepo,
@@ -38,40 +45,84 @@ const ViewDetails = () => {
     lackings,
     publicationDate,
   } = project;
-  console.log(projectDescription);
-  const parsedDate = publicationDate
-    ? parse(publicationDate, "yyyy-MM-dd", new Date())
-    : null;
+  console.log(imageAndDescriptions);
+
+  // const sweeperWrappedRef = useRef(null);
+  // const adjustMargin = () => {
+  //   const screenWidth = window.innerWidth;
+  //   if (sweeperWrappedRef.current) {
+  //     sweeperWrappedRef.current.style.marginLeft =
+  //       screenWidth <= 520
+  //         ? "0px"
+  //         : screenWidth <= 650
+  //         ? "-50px"
+  //         : screenWidth <= 800
+  //         ? "-100px"
+  //         : "-150px";
+  //   }
+  // };
+  // useEffect(() => {
+  //   adjustMargin();
+  //   window.addEventListener("resize", adjustMargin);
+  //   return () => window.removeEventListener("resize", adjustMargin);
+  // }, []);
   return (
     <div className="pt-32 w-11/12 md:w-10/12 mx-auto">
       <header>
-        <Title title={"Project Details"}></Title>
+        <Title title={"Project Details"} subTitle={projectTitle}></Title>
       </header>
       <section className="flex flex-col gap-6 p-4 bg-light-primary-20 dark:bg-dark-primary-20 rounded-lg">
         {/* Images */}
-        <div className="rounded-lg ">
+        <div className="rounded-lg flex items-center justify-center overflow-hidden  mx-auto">
           <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            pagination={{
-              clickable: true,
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={"auto"}
+            coverflowEffect={{
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
             }}
-            modules={[Pagination, Navigation]}
+            pagination={true}
+            modules={[EffectCoverflow, Pagination]}
+            // modules={[Pagination]}
+            // grabCursor
+            // initialSlide={2}
+            // centeredSlides
+            // slidesPerView="auto"
+            // speed={800}
+            // slideToClickedSlide
+            // pagination={{
+            //   clickable: true,
+            // }}
+            // breakpoints={{
+            //   320: { spaceBetween: 40 },
+            //   650: { spaceBetween: 30 },
+            //   1000: { spaceBetween: 20 },
+            // }}
+            // loop={true}
+            // onSwiper={(swiper) => {
+            //   sweeperWrappedRef.current = swiper.wrapperEl;
+            // }}
             className="mySwiper"
           >
-            {" "}
-            <SwiperSlide>
-              <img className="rounded-lg" src={image_1} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              {" "}
-              <img className="rounded-lg" src={image_2} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              {" "}
-              <img className="rounded-lg" src={image_3} alt="" />
-            </SwiperSlide>{" "}
+            {imageAndDescriptions
+              ? imageAndDescriptions.map((item, index) => (
+                  <SwiperSlide key={index} className="">
+                    <div className="relative">
+                      <img className="rounded-lg" src={item.url} alt="" />
+                      <div className="absolute left-1/2  bottom-0 transform -translate-x-1/2 text-center text-dark-color-text bg-black   bg-opacity-50  px-2 py-1  w-full hidden md:block">
+                        <span className="font-bold text-sm md:text-base lg:text-lg ">
+                          {item.description}
+                        </span>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))
+              : ""}
           </Swiper>
         </div>
         {/* descriptions */}
@@ -99,9 +150,9 @@ const ViewDetails = () => {
               </span>
               <span className=" text-light-primary dark:text-dark-primary">
                 {/* {format(new Date(publicationDate), "PPP")} */}{" "}
-                {parsedDate && isValid(parsedDate)
-                  ? format(parsedDate, "PPP")
-                  : "n/a"}
+                {publicationDate
+                  ? format(new Date(publicationDate), "PP")
+                  : "N/A"}
               </span>
             </p>
           </div>
@@ -132,16 +183,16 @@ const ViewDetails = () => {
               Difficulty Faced :
             </span>
             <span className=" text-light-color-text dark:text-dark-color-text">
-                {struggle}
-              </span>
+              {struggle}
+            </span>
           </p>
           <p>
             <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
-             Lackings:
+              Lackings:
             </span>
             <span className=" text-light-color-text dark:text-dark-color-text">
-                {lackings}
-              </span>
+              {lackings}
+            </span>
           </p>
         </div>
       </section>

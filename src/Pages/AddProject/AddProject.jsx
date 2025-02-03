@@ -1,31 +1,59 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Title from "../../Component/Title";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
+import Swal from "sweetalert2";
+import { imageUpload } from "../../Utilities/imageUpload";
 
 const AddProject = () => {
   const [publishedDate, setPublishedDate] = useState(new Date());
+  // const [newImageData, setNewImageData] = useState(null);
+  const [images, setImages] = useState([]);
+  const [cardImages, setCardImages] = useState([]);
   const axiosSecure = UseAxiosSecure();
+
+  const handleImageUpload = async (imageData) => {
+    try {
+      const { url: newImage } = await imageUpload(imageData);
+      setImages((prev) => [...prev, newImage]);
+    } catch (error) {
+      console.log("Error in image uploading", error, error.message);
+    }
+  };
+  const handleCardImageUpload = async (imageData) => {
+    try {
+      const { url: newImage } = await imageUpload(imageData);
+      console.log("triggering")
+      setCardImages((prev) => [...prev, newImage]);
+    } catch (error) {
+      console.log("Error in image uploading", error, error.message);
+    }
+  };
+  console.log(images);
+
   //   handle add
   const handleAddProject = (e) => {
     e.preventDefault();
+
     const projectTitle = e.target.projectTitle.value;
     const projectDescription = e.target.projectDescription.value;
-    const image_1 = e.target.image_1.value;
-    const image_2 = e.target.image_2.value;
-    const image_3 = e.target.image_3.value;
+
     const liveLink = e.target.liveLink.value;
     const clientGitRepo = e.target.clientGitRepo.value;
     const serverGitRepo = e.target.serverGitRepo.value;
     const struggle = e.target.struggle.value;
     const lackings = e.target.lackings.value;
+    const imageDescription = e.target.imageDescription.value.split("\n");
+    const imageAndDescriptions = images.map((url, index) => ({
+      url,
+      description: imageDescription[index],
+    }));
     const newProjectData = {
       projectTitle,
       projectDescription,
-      image_1,
-      image_2,
-      image_3,
+      cardImages,
+      imageAndDescriptions,
       liveLink,
       clientGitRepo,
       serverGitRepo,
@@ -33,7 +61,10 @@ const AddProject = () => {
       lackings,
       publicationDate: publishedDate,
     };
-    console.log(newProjectData);
+    // console.log(imageDescription);
+    // console.log(imageAndDescriptions);
+    // console.log(images);
+    // console.log(cardImages)
     axiosSecure
       .post("add-project", newProjectData)
       .then((res) => {
@@ -81,6 +112,31 @@ const AddProject = () => {
             </div>
             <div className="form-control">
               <input
+                onChange={(e) => {
+                  const file = e.target.files[0];
+                  if (file) {
+                    handleCardImageUpload(file);
+                  }
+                }}
+                type="file"
+                className="file-input file-input-bordered "
+              />
+            </div>
+            <div className="form-control">
+              <input
+                onChange={(e) => {
+                  const file = e.target.files[0];
+                  if (file) {
+                    handleImageUpload(file);
+                  }
+                }}
+                type="file"
+                className="file-input file-input-bordered "
+              />
+            </div>
+
+            {/* <div className="form-control">
+              <input
                 name="image_1"
                 type="url"
                 placeholder="First image of the project"
@@ -105,7 +161,7 @@ const AddProject = () => {
                 className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
                 required
               />
-            </div>
+            </div> */}
             <div className="form-control">
               <input
                 name="liveLink"
@@ -148,11 +204,20 @@ const AddProject = () => {
                 className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
               />
             </div>
-            <div className="form-control">
+            <div className="form-control grid-cols-2">
               <label htmlFor="">Publication Date</label>
               <DatePicker
                 selected={publishedDate}
                 onChange={(date) => setPublishedDate(date)}
+              />
+            </div>
+            <div className="form-control">
+              <textarea
+                name="imageDescription"
+                type="text"
+                placeholder="imageDescription"
+                className="grid-cols-2 input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
+                required
               />
             </div>
 
@@ -164,6 +229,14 @@ const AddProject = () => {
           </form>
         </div>
       </div>
+
+      <section className="grid grid-cols-5 gap-6 mt-4">
+        {images.map((image, index) => (
+          <div key={index}>
+            <img className="w-full object-cover" src={image}></img>
+          </div>
+        ))}
+      </section>
     </div>
   );
 };
