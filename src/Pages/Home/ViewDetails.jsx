@@ -47,6 +47,7 @@ const ViewDetails = () => {
     struggle,
     lackings,
     publicationDate,
+    features,
   } = project;
   console.log(imageAndDescriptions);
 
@@ -93,9 +94,8 @@ const ViewDetails = () => {
           </Swiper>
         </div>
 
-      
         <div className="px-6 pb-6 w-full">
-          <h2 className=" text-light-color-text dark:text-dark-color-text text-lg md:text-2xl lg:text-3xl mb-2 font-bold ">
+          <h2 className=" text-center text-light-color-text dark:text-dark-color-text text-lg md:text-4xl mb-2 font-bold ">
             {projectTitle}
           </h2>
           <p className=" text-light-color-text dark:text-dark-color-text text base md:text-lg mb-1">
@@ -142,23 +142,52 @@ const ViewDetails = () => {
               </div>
             </div>
           </div>
+          <div>
+            <h3 className="text-center text-light-color-text dark:text-dark-color-text text-lg md:text-3xl  mb-2 font-bold  md:mb-3">
+              ✨ Features
+            </h3>
+            <div className="flex flex-col gap-2 md:gap-3">
+              {features &&
+                features.map((feature, index) => {
+                  const [title, des] = feature.split(":");
 
-          <p className="mb-2 md:mb-3">
-            <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-xl">
-              Difficulty Faced :
-            </span>
+                  return (
+                    <div key={index}>
+                      <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-xl">
+                        {index + 1}. {title}:
+                      </span>{" "}
+                      {/* Title in bold */}
+                      <span className="text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
+                        {des}
+                      </span>{" "}
+                      {/* Description with some spacing */}
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+
+          <div className="mb-2 md:mb-3">
+            <h3 className="text-center font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-3xl mb-2 md:mb-3">
+              🥶 Struggles
+            </h3>
             <span className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
               {struggle}
             </span>
-          </p>
-          <p>
-            <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-xl">
-              Lackings:
-            </span>
-            <span className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
+          </div>
+          <div className="">
+            <h3 className="text-center flex items-center justify-center font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-3xl mb-2 md:mb-3 gap-2">
+              <img
+                className="w-10 h-10"
+                src="https://cdn-icons-png.flaticon.com/128/17243/17243559.png"
+                alt=""
+              />{" "}
+              Lackings
+            </h3>
+            <p className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
               {lackings}
-            </span>
-          </p>
+            </p>
+          </div>
         </div>
       </section>
     </div>
