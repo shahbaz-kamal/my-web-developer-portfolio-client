@@ -10,7 +10,8 @@ export const imageUpload = async (imageData) => {
       "content-type": "multipart/form-data",
     },
   });
-  const url = res.data.data.display_url;
-    console.log(url);
+  const url = res.data.data.image.url;
+  console.log(res.data);
+  console.log(url);
   return { url };
 };

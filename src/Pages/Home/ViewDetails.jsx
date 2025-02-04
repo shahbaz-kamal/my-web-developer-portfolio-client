@@ -20,8 +20,10 @@ import Title from "../../Component/Title";
 import { Link } from "react-router-dom";
 import { format, isValid, parse, parseISO } from "date-fns";
 import DetailsSlide from "./DetailsSlide";
-import "swiper/css/effect-cards";
+// import "swiper/css/effect-cards";
 import { MdOutlinePublish } from "react-icons/md";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const ViewDetails = () => {
   const [project, setProject] = useState([]);
@@ -48,25 +50,7 @@ const ViewDetails = () => {
   } = project;
   console.log(imageAndDescriptions);
 
-  // const sweeperWrappedRef = useRef(null);
-  // const adjustMargin = () => {
-  //   const screenWidth = window.innerWidth;
-  //   if (sweeperWrappedRef.current) {
-  //     sweeperWrappedRef.current.style.marginLeft =
-  //       screenWidth <= 520
-  //         ? "0px"
-  //         : screenWidth <= 650
-  //         ? "-50px"
-  //         : screenWidth <= 800
-  //         ? "-100px"
-  //         : "-150px";
-  //   }
-  // };
-  // useEffect(() => {
-  //   adjustMargin();
-  //   window.addEventListener("resize", adjustMargin);
-  //   return () => window.removeEventListener("resize", adjustMargin);
-  // }, []);
+  console.log(imageAndDescriptions);
   return (
     <div className="pt-32 w-11/12 md:w-10/12 mx-auto">
       <header>
@@ -77,44 +61,26 @@ const ViewDetails = () => {
         <div className="rounded-lg flex items-center justify-center overflow-hidden  mx-auto">
           <Swiper
             effect={"coverflow"}
+            // lazy={false}
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={"auto"}
+            slidesPerView="auto"
             coverflowEffect={{
-              rotate: 50,
+              rotate: 20,
               stretch: 0,
-              depth: 100,
-              modifier: 1,
+              depth: 50,
+              modifier: 2.5,
               slideShadows: true,
             }}
             pagination={true}
             modules={[EffectCoverflow, Pagination]}
-            // modules={[Pagination]}
-            // grabCursor
-            // initialSlide={2}
-            // centeredSlides
-            // slidesPerView="auto"
-            // speed={800}
-            // slideToClickedSlide
-            // pagination={{
-            //   clickable: true,
-            // }}
-            // breakpoints={{
-            //   320: { spaceBetween: 40 },
-            //   650: { spaceBetween: 30 },
-            //   1000: { spaceBetween: 20 },
-            // }}
-            // loop={true}
-            // onSwiper={(swiper) => {
-            //   sweeperWrappedRef.current = swiper.wrapperEl;
-            // }}
             className="mySwiper"
           >
             {imageAndDescriptions
               ? imageAndDescriptions.map((item, index) => (
                   <SwiperSlide key={index} className="">
-                    <div className="relative">
-                      <img className="rounded-lg" src={item.url} alt="" />
+                    <div className="relative ">
+                      <img className="rounded-lg  " src={item.url} alt="" />
                       <div className="absolute left-1/2  bottom-0 transform -translate-x-1/2 text-center text-dark-color-text bg-black   bg-opacity-50  px-2 py-1  w-full hidden md:block">
                         <span className="font-bold text-sm md:text-base lg:text-lg ">
                           {item.description}
@@ -126,12 +92,24 @@ const ViewDetails = () => {
               : ""}
           </Swiper>
         </div>
+
+        {/* test image resolution container starts */}
+        {/* <div className="w-[65%] mx-auto">
+          {imageAndDescriptions && (
+            <img
+              className="w-full object-cover"
+              src={imageAndDescriptions[0].url}
+              alt=""
+            />
+          )}
+        </div> */}
+        {/* test image resolution container ends */}
         {/* descriptions */}
-        <div className="card-body w-full">
-          <h2 className="card-title text-light-color-text dark:text-dark-color-text text-lg md:text-2xl">
+        <div className="px-6 pb-6 w-full">
+          <h2 className=" text-light-color-text dark:text-dark-color-text text-lg md:text-2xl lg:text-3xl mb-2 font-bold ">
             {projectTitle}
           </h2>
-          <p className=" text-light-color-text dark:text-dark-color-text text base md:text-lg">
+          <p className=" text-light-color-text dark:text-dark-color-text text base md:text-lg mb-1">
             {projectDescription}
           </p>
           <div className="w-full flex flex-col lg:flex-row gap-3">
@@ -161,7 +139,6 @@ const ViewDetails = () => {
                 </a>
               </div>
               <div>
-                {" "}
                 <p className="">
                   <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
                     Publication Date:
@@ -177,7 +154,7 @@ const ViewDetails = () => {
             </div>
           </div>
 
-          <p>
+          <p className="mb-1">
             <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-xl">
               Difficulty Faced :
             </span>
