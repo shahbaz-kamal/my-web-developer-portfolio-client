@@ -61,10 +61,7 @@ const AddProject = () => {
       lackings,
       publicationDate: publishedDate,
     };
-    // console.log(imageDescription);
-    // console.log(imageAndDescriptions);
-    // console.log(images);
-    // console.log(cardImages)
+    console.log(imageAndDescriptions)
     axiosSecure
       .post("add-project", newProjectData)
       .then((res) => {

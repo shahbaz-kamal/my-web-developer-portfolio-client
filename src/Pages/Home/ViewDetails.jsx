@@ -58,7 +58,7 @@ const ViewDetails = () => {
       </header>
       <section className="flex flex-col gap-6 p-4 bg-base-200 dark:bg-dark-primary-20 rounded-lg">
         {/* Images */}
-        <div className="rounded-lg flex items-center justify-center overflow-hidden  mx-auto">
+        <div className="rounded-lg flex items-center justify-center overflow-hidden  mx-auto px-6">
           <Swiper
             effect={"coverflow"}
             // lazy={false}
@@ -93,18 +93,7 @@ const ViewDetails = () => {
           </Swiper>
         </div>
 
-        {/* test image resolution container starts */}
-        {/* <div className="w-[65%] mx-auto">
-          {imageAndDescriptions && (
-            <img
-              className="w-full object-cover"
-              src={imageAndDescriptions[0].url}
-              alt=""
-            />
-          )}
-        </div> */}
-        {/* test image resolution container ends */}
-        {/* descriptions */}
+      
         <div className="px-6 pb-6 w-full">
           <h2 className=" text-light-color-text dark:text-dark-color-text text-lg md:text-2xl lg:text-3xl mb-2 font-bold ">
             {projectTitle}
@@ -112,7 +101,7 @@ const ViewDetails = () => {
           <p className=" text-light-color-text dark:text-dark-color-text text base md:text-lg mb-1">
             {projectDescription}
           </p>
-          <div className="w-full flex flex-col lg:flex-row gap-3">
+          <div className="w-full flex flex-col lg:flex-row gap-3 my-2 md:my-3">
             <div className="flex items-center gap-3 w-full justify-center flex-wrap md:flex-nowrap">
               <div>
                 <a href={liveLink} target="_blank">
@@ -154,7 +143,7 @@ const ViewDetails = () => {
             </div>
           </div>
 
-          <p className="mb-1">
+          <p className="mb-2 md:mb-3">
             <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-xl">
               Difficulty Faced :
             </span>
