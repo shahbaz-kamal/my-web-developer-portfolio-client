@@ -1,0 +1,44 @@
+Home Page.
+Login Page: User can login with email & password or login with google.
+Register Page: User can register with credentials or register with google.
+Portfolio Page: Sample Work.
+Profile for User Having Roles Employee/ HR/ Admin (Inside Dashboard).
+User Can Update Profile.(Inside Dashboard)
+Worksheet Page For Employee: Employees can add their tasks & view tasks. Auto refresh without reloading after adding a task (Inside Dashboard). 
+Employee List for Admin: Admins can view all employee list. Make payment request to admin for a specific employee, make an employee verified and can view the employee salary record in a chart (Inside Dashboard). 
+Employee Salary Record for an individual employee(Inside Dashboard).
+Progress page for Admin: Admins can view all tasks added by all employee from "work sheet" page and filter by name & month (Inside Dashboard).
+Contact Us for Clients: Clients can fill up this form and both the admin and HR can view messages sent by clients in a card format (Inside Dashboard).
+Messages From Clients(Only for HR and Admin).
+All Employee List For Admin: Admin can increase salary of any employee, make an employee HR and fire an employee (Inside Dashboard).
+Payroll for Admin: Admin can view the payment requests mad by HR in the "payment" page and approve the payment (Inside Dashboard). 
+Payment Modal For Admin: Upon Clicking the pay button a modal pops up and admin can perform payment functionality through "Stripe" (Inside Dashboard).
+About Us Page.(By clicking the user image a button appears and user can log out. This feature is accessible from anywhere in the webpage. Condition is user must be logged in)
+
+
+Features:
+
+Responsive Design : Fully responsive layout built with Tailwind CSS, ensuring a seamless experience on mobile, tablet, and desktop devices.
+User Authentication : Secure login and registration using Firebase Authentication with Google Sign-in for quick access. Conditional navigation based on the user's login state, displaying user information or authentication options.
+Role-Based Access Control: Users can register as Employees or HRs via email/password authentication. Private routes ensure data privacy and secure access.
+Employee Work Record Management : Employees can submit daily work tasks (task type, hours worked, date) through a form. These records are displayed in a table with options to edit or delete.
+Salary Payment History: Employees can view their salary payment history, with details like month, amount, and transaction ID. HR can add, update, and track payment status.
+HR Management Interface : HR can view employee data, verify employee status, and make salary payments. They can also filter work records by employee name or month/year.
+Admin Dashboard : Admin can manage all employees, make employees HRs, and fire employees. Admin has full access to view employee details, approve payments, and adjust salaries.
+Employee Details & Progress Tracking : HR can view employee profiles, including personal info, photo, and work records. A bar chart shows salary vs. month/year for each employee.
+CRUD Operations with Notifications : All operations (add, edit, delete) are handled via forms and tables, with sweet alert/toast notifications for success or failure feedback.
+Role-specific Route Protection : The website uses JWT tokens for secure authentication, ensuring that only users with the correct role (Employee, HR, Admin) can access their respective routes and functionalities.
+Payment Gateway Integration : Admin can make salary payments to employees via a payment gateway(stripe). Payments can only be made once per month/year to avoid double payments.
+
+
+
+Lackings: One of the areas where my project could have been improved is the choice of color palette, as I am not a professional web designer, and the colors may not be as visually appealing as they could be. Additionally, the card view and grid view toggling should have been implemented across all relevant pages to enhance the user experience and provide more flexibility in data presentation.
+
+Struggles: 
+I struggled to implement the payment gateway through Stripe as it was a new concept for me at the time. Setting up the integration, managing API keys, and ensuring secure transactions were quite challenging. Additionally, during testing, payments were processed using fake Stripe test cards, which helped me understand the workflow but didn’t provide a real-world payment experience. However, this process gave me valuable insights into how Stripe functions, and I feel more confident about working with payment gateways in the future.
+
+
+
+
+
+

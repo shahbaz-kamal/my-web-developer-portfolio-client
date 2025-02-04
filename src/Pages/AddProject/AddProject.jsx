@@ -8,7 +8,7 @@ import { imageUpload } from "../../Utilities/imageUpload";
 
 const AddProject = () => {
   const [publishedDate, setPublishedDate] = useState(new Date());
-  // const [newImageData, setNewImageData] = useState(null);
+  const [technologyUsed, setTechnologyUsed] = useState([]);
   const [images, setImages] = useState([]);
   const [cardImages, setCardImages] = useState([]);
   const axiosSecure = UseAxiosSecure();
@@ -24,14 +24,23 @@ const AddProject = () => {
   const handleCardImageUpload = async (imageData) => {
     try {
       const { url: newImage } = await imageUpload(imageData);
-      console.log("triggering")
+      console.log("triggering");
       setCardImages((prev) => [...prev, newImage]);
     } catch (error) {
       console.log("Error in image uploading", error, error.message);
     }
   };
   console.log(images);
-
+  // handle tech
+  const handleTechnologyUsed = async (e) => {
+    const newTech = e.target.value;
+    if (technologyUsed.includes(newTech)) {
+      console.log("already included");
+      return;
+    }
+    setTechnologyUsed((prev) => [...prev, newTech]);
+  };
+  console.log(technologyUsed);
   //   handle add
   const handleAddProject = (e) => {
     e.preventDefault();
@@ -45,6 +54,7 @@ const AddProject = () => {
     const struggle = e.target.struggle.value;
     const lackings = e.target.lackings.value;
     const imageDescription = e.target.imageDescription.value.split("\n");
+    const features = e.target.features.value.split("\n");
     const imageAndDescriptions = images.map((url, index) => ({
       url,
       description: imageDescription[index],
@@ -60,8 +70,10 @@ const AddProject = () => {
       struggle,
       lackings,
       publicationDate: publishedDate,
+      features,
+      technologyUsed,
     };
-    console.log(imageAndDescriptions)
+    console.log(imageAndDescriptions);
     axiosSecure
       .post("add-project", newProjectData)
       .then((res) => {
@@ -132,33 +144,6 @@ const AddProject = () => {
               />
             </div>
 
-            {/* <div className="form-control">
-              <input
-                name="image_1"
-                type="url"
-                placeholder="First image of the project"
-                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <input
-                name="image_2"
-                type="url"
-                placeholder="Second image of the project"
-                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <input
-                name="image_3"
-                type="url"
-                placeholder="Third image of the project"
-                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
-                required
-              />
-            </div> */}
             <div className="form-control">
               <input
                 name="liveLink"
@@ -217,7 +202,52 @@ const AddProject = () => {
                 required
               />
             </div>
-
+            <div className="form-control">
+              <textarea
+                name="features"
+                type="text"
+                placeholder="Features"
+                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <select
+                onChange={handleTechnologyUsed}
+                name="technologies"
+                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
+                required
+              >
+                <option value="">Select Technologies</option>
+                <option value="https://i.ibb.co.com/MZ9LksT/html.png">
+                  HTML
+                </option>
+                <option value="https://i.ibb.co.com/1zyXkLr/css-3.png">
+                  CSS
+                </option>
+                <option value="https://i.ibb.co.com/XkWsbQDL/tailwind.png">
+                  Tailwind CSS
+                </option>
+                <option value="https://i.ibb.co.com/4Mvj996/js.png">
+                  JavaScript
+                </option>
+                <option value="https://i.ibb.co.com/C5hww77M/firebase.png">
+                  FireBase
+                </option>
+                <option value="https://i.ibb.co.com/KL6XByh/react.png">
+                  React
+                </option>
+                <option value="https://i.ibb.co.com/6ZMC66j/nodejs.png">
+                  Node.js
+                </option>
+                <option value="https://i.ibb.co.com/6JyLGWnk/express-color.png">
+                  Express.js
+                </option>
+                <option value="https://i.ibb.co.com/VQpcJZY/mongoDB.png">
+                  MongoDB
+                </option>
+              </select>
+            </div>
             <div className="form-control mt-6 col-span-2">
               <button className="py-2 font-bold bg-light-accent text-light-color-text dark:bg-dark-primary hover:bg-light-primary hover:text-dark-color-text dark:hover:bg-dark-accent rounded-full transition duration-300 ease-in-out">
                 Add Projects
