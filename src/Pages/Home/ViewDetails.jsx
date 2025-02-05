@@ -61,6 +61,7 @@ const ViewDetails = () => {
             grabCursor={true}
             centeredSlides={true}
             slidesPerView="auto"
+            loop={true}
             coverflowEffect={{
               rotate: 20,
               stretch: 0,
