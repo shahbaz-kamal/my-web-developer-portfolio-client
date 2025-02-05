@@ -246,6 +246,9 @@ const AddProject = () => {
                 <option value="https://i.ibb.co.com/VQpcJZY/mongoDB.png">
                   MongoDB
                 </option>
+                <option value="https://img.icons8.com/?size=80&id=t9fIqVSKsYSK&format=png">
+                  Stripe
+                </option>
               </select>
             </div>
             <div className="form-control mt-6 col-span-2">
