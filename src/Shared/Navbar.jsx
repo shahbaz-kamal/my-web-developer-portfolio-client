@@ -7,6 +7,7 @@ import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import { HashLink } from "react-router-hash-link";
 import UseAuth from "../Hooks/UseAuth";
 import UseMessages from "../Hooks/UseMessages";
+import { TiThMenuOutline } from "react-icons/ti";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState(""); // Track active section
@@ -70,11 +71,11 @@ const Navbar = () => {
         }}
         className={`${
           activeSection === "home"
-            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
-            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary "
         }`}
       >
-        <li>Home</li>
+        <li className="px-2">Home</li>
       </HashLink>
       <HashLink
         to="#about-me"
@@ -85,11 +86,11 @@ const Navbar = () => {
         }}
         className={`${
           activeSection === "about-me"
-            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
-            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
         }`}
       >
-        <li>About Me</li>
+        <li className="px-2">About Me</li>
       </HashLink>
       <HashLink
         to="#experience"
@@ -100,11 +101,11 @@ const Navbar = () => {
         }}
         className={`${
           activeSection === "experience"
-            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
-            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
         }`}
       >
-        <li>Experience</li>
+        <li className="px-2">Experience</li>
       </HashLink>
       <HashLink
         to="/#education"
@@ -115,11 +116,11 @@ const Navbar = () => {
         }}
         className={`${
           activeSection === "education"
-            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
-            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary "
         }`}
       >
-        <li>Education</li>
+        <li className="px-2">Education</li>
       </HashLink>
       <HashLink
         to="/#skills"
@@ -130,11 +131,11 @@ const Navbar = () => {
         }}
         className={`${
           activeSection === "education"
-            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
-            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary "
         }`}
       >
-        <li>Skills</li>
+        <li className="px-2">Skills</li>
       </HashLink>
       <HashLink
         to="/#my-project"
@@ -145,11 +146,11 @@ const Navbar = () => {
         }}
         className={`${
           activeSection === "my-project"
-            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
-            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
         }`}
       >
-        <li>Projects</li>
+        <li className="px-2">Projects</li>
       </HashLink>
       <HashLink
         to="/#contact"
@@ -160,11 +161,11 @@ const Navbar = () => {
         }}
         className={`${
           activeSection === "my-project"
-            ? "text-base bg-light-accent hover:bg-light-accent hover:text-dark-color-text dark:bg-dark-primary dark:hover:bg-dark-secondary  px-2 transition duration-300 ease-in-out"
-            : "text-base bg-neutral text-white px-2 hover:bg-light-accent hover:text-dark-color-text dark:hover:bg-dark-secondary "
+            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary "
+            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
         }`}
       >
-        <li>Contact</li>
+        <li className="px-2">Contact</li>
       </HashLink>
 
       {/* Only for me */}
@@ -208,28 +209,17 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-11/12 md:w-10/12 mx-auto navbar   md:px-5 ">
+    <div className="w-11/12 md:w-10/12 mx-auto navbar md:px-5 ">
       <div className="navbar-start inline-flex">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
+        <div className="dropdown xl:flex">
+          <div tabIndex={0} role="button" className="btn btn-ghost xl:hidden">
+            <div className="  text-light-primary dark:text-dark-primary ">
+              <TiThMenuOutline size={25} />
+            </div>
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 dark:bg-neutral rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-2"
           >
             {links}
           </ul>
@@ -242,17 +232,16 @@ const Navbar = () => {
           />
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden xl:flex">
         <ul className="menu menu-horizontal px-1 gap-3">{links}</ul>
       </div>
-      <div className="navbar-end flex-groq gap-3">
+      <div className="navbar-end flex-grow gap-3">
         <label className="flex cursor-pointer gap-2 items-center">
           <span className="label-text text-light-color-text dark:text-dark-color-text transition ease-in-out duration-300">
-            <span className="hidden md:inline-flex text-dark-color-text">
-              {" "}
+            <span className="hidden md:hidden text-light-accent dark:text-dark-color-text">
               Light
             </span>
-            <span className="md:hidden">
+            <span className="hidden">
               <CiLight size={25} />
             </span>
           </span>
@@ -260,50 +249,27 @@ const Navbar = () => {
             onChange={(e) => setIsDarkMode(!isDarkMode)}
             type="checkbox"
             value="synthwave"
-            className="toggle theme-controller text-light-primary dark:text-dark-primary"
+            className="toggle theme-controller text-light-primary  dark:text-dark-primary"
           />
-          <span className="label-text text-light-color-text dark:text-dark-color-text transition ease-in-out duration-300">
-            <span className="hidden md:inline-flex text-dark-color-text">
-              {" "}
-              dark
-            </span>
-            <span className="md:hidden">
+          <span className="label-text text-dark-primary dark:text-dark-color-text transition ease-in-out duration-300">
+            <span className="hidden md:hidden font-semibold ">dark</span>
+            <span className="hidden">
               <CiDark size={25} />
             </span>
           </span>
         </label>
-        {/* <button
+        <button
           onClick={handleDownload}
           className="text-sm md:text-xl flex items-center gap-2 py-2 px-3 rounded-full bg-light-accent  hover:bg-light-primary hover:text-white text-light-color-text dark:bg-dark-primary dark:hover:bg-dark-accent dark:hover:text-dark-color-text  transition ease-in-out duration-300 "
         >
           Resume <FaDownload />
-        
           <a
-            href="/resume.pdf" 
-            download="Shahbaz_Resume.pdf" 
-            ref={downloadRef} 
-            style={{ display: "none" }} 
+            href="/resume.pdf"
+            download="Shahbaz_Resume.pdf"
+            ref={downloadRef}
+            style={{ display: "none" }}
           />
-        </button> */}
-           <button
-                      onClick={handleDownload}
-                      className="relative text-lg md:text-xl flex items-center gap-2 pl-3 rounded-full text-dark-color-text  dark:hover:text-light-color-text transition ease-in-out duration-300 border border-light-accent dark:border-dark-primary group overflow-hidden"
-                    >
-                      {/* Background Animation */}
-                      <span className="absolute inset-0 bg-light-accent dark:bg-dark-primary transform translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></span>
-        
-                      {/* Button Content */}
-                      <span className="relative z-10">Resume</span>
-                      <span className="relative z-10 bg-light-accent dark:bg-dark-primary rounded-full p-3 border-2 border-light-accent dark:border-dark-primary flex items-center justify-center">
-                        <FaDownload />
-                      </span>
-                      <a
-                        href="/resume.pdf" // Path to your resume file
-                        download="Shahbaz_Resume.pdf" // Optional: specify the filename
-                        ref={downloadRef} // Using the ref to trigger the download
-                        style={{ display: "none" }} // Hide the anchor tag
-                      />
-                    </button>
+        </button>
       </div>
     </div>
   );

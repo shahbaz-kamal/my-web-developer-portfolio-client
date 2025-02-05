@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
   return (
     <div>
-      <section className="w-full mx-auto fixed z-10  bg-opacity-60 bg-black py-2  backdrop-blur-xl">
+      <section className="w-full mx-auto fixed z-10 bg-black  bg-opacity-20 dark:bg-opacity-50 py-2  backdrop-blur-3xl dark:backdrop-blur-xl">
         <Navbar></Navbar>
       </section>
       <section className="">
