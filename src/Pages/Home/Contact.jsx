@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Title from "../../Component/Title";
 import { CiLocationOn } from "react-icons/ci";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 import Swal from "sweetalert2";
@@ -208,23 +208,8 @@ const Contact = () => {
               </p>
             </div>
           </div>
-          {/* phone */}
-          <div className="flex gap-3">
-            {/* icon */}
-            <div className="bg-light-primary-20 rounded-xl text-light-primary p-3 dark:bg-dark-primary-20 dark:text-dark-primary">
-              <FaPhoneAlt size={30} />
-            </div>
-            <div>
-              <h3 className="font-semibold text-base md:text-xl text-light-color-text dark:text-dark-color-text">
-                Phone
-              </h3>
-              <p className="text-light-color-text dark:text-dark-color-text">
-                +880 1799839985
-              </p>
-            </div>
-          </div>
-          {/* email */}
-          <a
+            {/* email */}
+            <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=shahbazkamal384@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -244,6 +229,37 @@ const Contact = () => {
               </p>
             </div>
           </a>
+          {/* phone */}
+          <div className="flex gap-3">
+            {/* icon */}
+            <div className="bg-light-primary-20 rounded-xl text-light-primary p-3 dark:bg-dark-primary-20 dark:text-dark-primary">
+              <FaPhoneAlt size={30} />
+            </div>
+            <div>
+              <h3 className="font-semibold text-base md:text-xl text-light-color-text dark:text-dark-color-text">
+                Phone
+              </h3>
+              <p className="text-light-color-text dark:text-dark-color-text">
+                +880 1799839985
+              </p>
+            </div>
+          </div>
+          {/* WhatsApp */}
+          <div className="flex gap-3">
+            {/* icon */}
+            <div className="bg-light-primary-20 rounded-xl text-light-primary p-3 dark:bg-dark-primary-20 dark:text-dark-primary">
+              <FaWhatsapp size={30} />
+            </div>
+            <div>
+              <h3 className="font-semibold text-base md:text-xl text-light-color-text dark:text-dark-color-text">
+                WhatsApp
+              </h3>
+              <p className="text-light-color-text dark:text-dark-color-text">
+                +880 1799839985
+              </p>
+            </div>
+          </div>
+        
         </div>
       </section>
     </div>
