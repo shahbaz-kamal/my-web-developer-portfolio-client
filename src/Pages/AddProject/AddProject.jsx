@@ -243,7 +243,7 @@ const AddProject = () => {
                 <option value="https://i.ibb.co.com/6JyLGWnk/express-color.png">
                   Express.js
                 </option>
-                <option value="https://i.ibb.co.com/VQpcJZY/mongoDB.png">
+                <option value="https://i.ibb.co.com/6JyLGWnk/express-color.png">
                   MongoDB
                 </option>
                 <option value="https://img.icons8.com/?size=80&id=t9fIqVSKsYSK&format=png">

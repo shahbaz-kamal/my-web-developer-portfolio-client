@@ -146,19 +146,28 @@ const ViewDetails = () => {
           {/* technology */}
           {technologyUsed && (
             <div className="mb-2 md:mb-6">
-              <h3 className="text-center text-light-color-text dark:text-dark-color-text text-lg md:text-3xl  mb-2 font-bold  md:mb-3">
-                ✨ Technology Used
+              <h3 className="flex items-center justify-center gap-2 text-center text-light-color-text dark:text-dark-color-text text-lg md:text-3xl  mb-2 font-bold  md:mb-3">
+                {/* <img
+                  className="w-8 h-8"
+                  src="https://cdn-icons-png.flaticon.com/128/1087/1087927.png"
+                  alt=""
+                /> */}
+                🛠️ Technology Used
               </h3>
               <div className="flex gap-4 justify-center items-center flex-wrap">
                 {technologyUsed.map((tech, index) => (
                   <div className="w-12 h-12 md:w-14 md:h-14 p-1">
-                    <img className="w-full h-full object-cover" src={tech} alt="" />
+                    <img
+                      className="w-full h-full object-cover"
+                      src={tech}
+                      alt=""
+                    />
                   </div>
                 ))}
               </div>
             </div>
           )}
-{/* features */}
+          {/* features */}
           <div className="mb-3 md:mb-6">
             <h3 className="text-center text-light-color-text dark:text-dark-color-text text-lg md:text-3xl  mb-2 font-bold  md:mb-3">
               ✨ Features
