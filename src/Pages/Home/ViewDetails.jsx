@@ -48,8 +48,9 @@ const ViewDetails = () => {
     lackings,
     publicationDate,
     features,
+    technologyUsed,
   } = project;
-  console.log(imageAndDescriptions);
+  console.log(technologyUsed);
 
   console.log(imageAndDescriptions);
   return (
@@ -95,13 +96,13 @@ const ViewDetails = () => {
         </div>
 
         <div className="px-6 pb-6 w-full">
-          <h2 className=" text-center text-light-color-text dark:text-dark-color-text text-lg md:text-4xl mb-2 font-bold ">
+          <h2 className=" text-center text-light-color-text dark:text-dark-color-text text-lg md:text-4xl mb-2 md:mb-3 font-bold ">
             {projectTitle}
           </h2>
-          <p className=" text-light-color-text dark:text-dark-color-text text base md:text-lg mb-1">
+          <p className=" text-light-color-text dark:text-dark-color-text text base md:text-lg mb-3 md:mb-6">
             {projectDescription}
           </p>
-          <div className="w-full flex flex-col lg:flex-row gap-3 my-2 md:my-3">
+          <div className="w-full flex flex-col lg:flex-row gap-3 mb-3 md:mb-6">
             <div className="flex items-center gap-3 w-full justify-center flex-wrap md:flex-nowrap">
               <div>
                 <a href={liveLink} target="_blank">
@@ -142,7 +143,23 @@ const ViewDetails = () => {
               </div>
             </div>
           </div>
-          <div>
+          {/* technology */}
+          {technologyUsed && (
+            <div className="mb-2 md:mb-6">
+              <h3 className="text-center text-light-color-text dark:text-dark-color-text text-lg md:text-3xl  mb-2 font-bold  md:mb-3">
+                ✨ Technology Used
+              </h3>
+              <div className="flex gap-4 justify-center items-center flex-wrap">
+                {technologyUsed.map((tech, index) => (
+                  <div className="w-12 h-12 md:w-14 md:h-14 p-1">
+                    <img className="w-full h-full object-cover" src={tech} alt="" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+{/* features */}
+          <div className="mb-3 md:mb-6">
             <h3 className="text-center text-light-color-text dark:text-dark-color-text text-lg md:text-3xl  mb-2 font-bold  md:mb-3">
               ✨ Features
             </h3>
@@ -175,7 +192,7 @@ const ViewDetails = () => {
               {struggle}
             </span>
           </div>
-          <div className="">
+          <div className="mb-2 md:mb-6">
             <h3 className="text-center flex items-center justify-center font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-3xl mb-2 md:mb-3 gap-2">
               <img
                 className="w-10 h-10"
