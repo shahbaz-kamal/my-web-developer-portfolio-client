@@ -1,0 +1,36 @@
+Project Title: Career Compass: Your Personalized Career Guidance Platform 🌟
+
+Project Description: 
+Career Compass is a responsive and user-friendly web application designed to assist users in their career growth by providing personalized guidance and resources. Built with React, Firebase Authentication, and Tailwind CSS, it features secure login, password management, customizable profiles, and a dedicated section to showcase certifications and achievements. Users can access curated career resources and FAQs to make informed decisions, while the platform ensures scalability and modern design best practices. Perfect for those seeking a seamless and intuitive career development tool.
+
+
+Image Descriptions:
+
+Home Page: User can view Four Navitems when he/she is not logged in (Public Route).
+Login Page: User Can login with credentials or Google.
+Register Page: User Can Register with credentials or Google.
+All Services Page: Users can view all services (Public Route).
+Learn More Page : Users can view details about a particular services. User needs to be logged In. (Private Route)
+Profile Management: Users can view there profile information and update them. (Private Route)
+Workshops Page: Users can view the upcoming Event & Workshop. (public Route)
+Success Stories: Users can view the success stories of a persons who took services and shined. (public Route)
+
+
+Features:
+
+Personalized Career Advice :  Tailored career recommendations based on user profiles and preferences.
+User Authentication : Secure login and sign-up using Firebase Authentication. Google Sign-in for quick and easy access.
+Profile Management : Users can update their personal details, including name and profile picture, to maintain a personalized experience.
+Forgot Password Functionality : Functional password recovery system that redirects users to their Gmail inbox for resetting their passwords securely.
+Responsive Design : Functional password recovery system that redirects users to their Gmail inbox for resetting their passwords securely.
+
+
+Struggles: 
+I struggled with implementing Firebase authentication because it was a new concept for me. Understanding the integration of Firebase services, handling authentication methods like email/password or third-party logins, and setting up the necessary configurations was challenging at first. However, once I got familiar with the Firebase SDK and its documentation, I was able to overcome the obstacles and successfully implement secure user authentication in the application.
+
+Lackings: 
+The project lacks essential features like CRUD operations for managing data (e.g., users, products, orders), JWT (JSON Web Token) implementation for secure authentication and authorization, and a payment gateway for processing transactions. These components are crucial for building a complete, secure, and functional web application.
+
+Live Link: https://career-compass-website-by-shahbaz.netlify.app/
+Git Client : https://github.com/shahbaz-kamal/career-compass-website.git
+Git Server : 

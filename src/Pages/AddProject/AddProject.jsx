@@ -50,7 +50,7 @@ const AddProject = () => {
 
     const liveLink = e.target.liveLink.value;
     const clientGitRepo = e.target.clientGitRepo.value;
-    const serverGitRepo = e.target.serverGitRepo.value;
+    const serverGitRepo = e.target.serverGitRepo.value || null;
     const struggle = e.target.struggle.value;
     const lackings = e.target.lackings.value;
     const imageDescription = e.target.imageDescription.value.split("\n");
@@ -243,7 +243,7 @@ const AddProject = () => {
                 <option value="https://i.ibb.co.com/6JyLGWnk/express-color.png">
                   Express.js
                 </option>
-                <option value="https://i.ibb.co.com/6JyLGWnk/express-color.png">
+                <option value="https://i.ibb.co.com/VQpcJZY/mongoDB.png">
                   MongoDB
                 </option>
                 <option value="https://img.icons8.com/?size=80&id=t9fIqVSKsYSK&format=png">

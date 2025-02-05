@@ -112,7 +112,6 @@ const ViewDetails = () => {
                 </a>
               </div>
               <div>
-                {" "}
                 <a href={clientGitRepo} target="_blank">
                   <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
                     {" "}
@@ -120,14 +119,16 @@ const ViewDetails = () => {
                   </button>
                 </a>
               </div>
-              <div>
-                <a href={serverGitRepo} target="_blank">
-                  <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
-                    {" "}
-                    Git Server
-                  </button>
-                </a>
-              </div>
+              {serverGitRepo && (
+                <div>
+                  <a href={serverGitRepo} target="_blank">
+                    <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+                      Git Server
+                    </button>
+                  </a>
+                </div>
+              )}
+
               <div>
                 <p className="">
                   <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
@@ -207,7 +208,7 @@ const ViewDetails = () => {
                 className="w-10 h-10"
                 src="https://cdn-icons-png.flaticon.com/128/17243/17243559.png"
                 alt=""
-              />{" "}
+              />
               Lackings
             </h3>
             <p className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
