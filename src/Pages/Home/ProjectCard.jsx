@@ -82,7 +82,7 @@ const ProjectCard = ({ project }) => {
         </h2>
         <p className=" text-light-color-text dark:text-dark-color-text ">
           {projectDescription.slice(0, 200)}....{" "}
-          <span className="font-bold text-light-accent dark:text-dark-color-text">
+          <span className="font-bold text-light-accent dark:text-dark-primary">
             <Link to={`/view-details/${_id}`}>View Details </Link>
           </span>
         </p>
