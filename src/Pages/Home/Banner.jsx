@@ -78,7 +78,7 @@ const Banner = () => {
               Md. Shahbaz Kamal Chowdhury
             </h3>
             <p className="text-dark-color-text text-2xl md:text-[32px] lg:text-4xl font-cinzel mb-3">
-              Web Developer
+              MERN Stack Web Developer
             </p>
             <p className="max-w-[500px] text-dark-color-text mb-4 text-center lg:text-start">
               A passionate web developer skilled in HTML, CSS, JavaScript, and
