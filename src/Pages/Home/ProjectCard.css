@@ -2,3 +2,6 @@
     padding-top: 24px !important;
     padding-bottom: 24px !important;
 }
+.swiper-pagination {
+    bottom: -5px !important; /* Adjust this value as needed */
+  }

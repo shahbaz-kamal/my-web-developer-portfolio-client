@@ -8,21 +8,15 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 
-import {
-  Pagination,
-  Navigation,
-  EffectCards,
-  EffectCoverflow,
-} from "swiper/modules";
+import { Pagination, EffectCoverflow, Navigation,Autoplay } from "swiper/modules";
 import { useParams } from "react-router-dom";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 import Title from "../../Component/Title";
-import { Link } from "react-router-dom";
-import { format, isValid, parse, parseISO } from "date-fns";
-import DetailsSlide from "./DetailsSlide";
+
+import { format } from "date-fns";
+
 // import "swiper/css/effect-cards";
-import { MdOutlinePublish } from "react-icons/md";
-import { Carousel } from "react-responsive-carousel";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const ViewDetails = () => {
@@ -75,7 +69,17 @@ const ViewDetails = () => {
               slideShadows: true,
             }}
             pagination={true}
-            modules={[EffectCoverflow, Pagination]}
+            navigation={true}
+            autoplay={{
+              delay: 2000, 
+              disableOnInteraction: false, 
+            }}
+            onSwiper={(swiper) => {
+              // Pause autoplay on hover
+              swiper.el.addEventListener("mouseenter", () => swiper.autoplay.stop());
+              swiper.el.addEventListener("mouseleave", () => swiper.autoplay.start());
+            }}
+            modules={[EffectCoverflow, Pagination, Navigation,Autoplay]}
             className="mySwiper"
           >
             {imageAndDescriptions

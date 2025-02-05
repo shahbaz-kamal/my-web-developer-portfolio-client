@@ -1,14 +1,22 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { useRef, useEffect } from "react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
 import "./ProjectCard.css";
 const ProjectCard = ({ project }) => {
+  const swiperRef = useRef(null); // Ref for this specific card's swiper
+
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      // Ensure autoplay is stopped initially for this card
+      swiperRef.current.swiper.autoplay.stop();
+    }
+  }, []);
   const {
     _id,
     projectTitle,
@@ -20,12 +28,27 @@ const ProjectCard = ({ project }) => {
     struggle,
     lackings,
     publicationDate,
+    technologyUsed,
   } = project;
   console.log(cardImages);
   return (
-    <div className="card bg-base-200  dark:bg-dark-primary dark:bg-opacity-20  shadow-xl">
+    <div
+      className="card bg-base-200  dark:bg-dark-primary dark:bg-opacity-20  shadow-xl"
+      onMouseEnter={() => {
+        if (swiperRef.current && swiperRef.current.swiper) {
+          swiperRef.current.swiper.autoplay.start(); // Start autoplay on hover
+        }
+      }}
+      onMouseLeave={() => {
+        if (swiperRef.current && swiperRef.current.swiper) {
+          swiperRef.current.swiper.autoplay.stop(); // Stop autoplay when hover ends
+        }
+      }}
+     
+    >
       <figure className="px-6 pt-0 rounded-md">
         <Swiper
+          ref={swiperRef}
           slidesPerView={1}
           spaceBetween={30}
           loop={true}
@@ -33,14 +56,21 @@ const ProjectCard = ({ project }) => {
             clickable: true,
           }}
           //   navigation={true}
-          modules={[Pagination]}
+          autoplay={{
+            delay: 2000, // Adjust delay (3 seconds)
+            disableOnInteraction: false, // Continue autoplay after interaction
+            stopOnLastSlide: false, // Loops through slides
+          }}
+          modules={[Pagination, Autoplay]}
           className="mySwiper"
         >
           {/* {project?project.map((singleProject,index)=><SwiperSlide key={singleProject._id} image_1={}></SwiperSlide>):} */}
           {cardImages
             ? cardImages.map((item, index) => (
                 <SwiperSlide key={index} item={item}>
-                  <img className="rounded-xl" src={item} alt="" />
+                   <Link to={`/view-details/${_id}`}>
+                  <img className="rounded-xl" src={item} alt={`Slide ${index}`} />
+                </Link>
                 </SwiperSlide>
               ))
             : ""}
@@ -56,6 +86,21 @@ const ProjectCard = ({ project }) => {
             <Link to={`/view-details/${_id}`}>View Details </Link>
           </span>
         </p>
+        {technologyUsed && (
+          <div className=" my-6">
+            <div className="flex gap-4 justify-center items-center flex-wrap">
+              {technologyUsed.map((tech, index) => (
+                <div className="w-10 h-10 p-1">
+                  <img
+                    className="w-full h-full object-cover"
+                    src={tech}
+                    alt=""
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="flex justify-center items-center mb-6 flex-wrap gap-4">
           <a href={liveLink} target="_blank">
             <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
@@ -70,7 +115,6 @@ const ProjectCard = ({ project }) => {
           {serverGitRepo && (
             <a href={serverGitRepo} target="_blank">
               <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
-             
                 Git Server
               </button>
             </a>

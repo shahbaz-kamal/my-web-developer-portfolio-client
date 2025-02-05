@@ -1,8 +1,21 @@
+:root {
+  --swiper-nav-bg: #c83a4e; /* Light Mode - Aqua */
+  --swiper-arrow-color: #100c0d; /* White arrows */
+  --swiper-hover-color: #f5445c;
+  --swiper-hover-text: #ffffff;
+}
+
+.dark {
+  --swiper-nav-bg: #919bea; /* Dark Mode - Your primary color */
+  --swiper-arrow-color: #100c0d; /* White arrows */
+  --swiper-hover-color: #122197;
+  --swiper-hover-text: #ffffff;
+}
+
 .swiper {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
-
 }
 .swiper-slide {
   background-position: center;
@@ -15,6 +28,41 @@
   display: flex;
   object-fit: cover;
 }
+/* Common styles for both light & dark mode */
+/* Common styles for both modes */
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: var(--swiper-nav-bg) !important;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Change arrow color */
+/* Change arrow color */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+  color: var(--swiper-arrow-color) !important;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect - Change both background & arrow color */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: var(--swiper-hover-color) !important;
+}
+
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+  color: var(--swiper-hover-text) !important;
+}
+
 
 @media (max-width: 1200px) {
   .swiper-slide {
