@@ -18,8 +18,8 @@ const Banner = () => {
   };
   return (
     <div id="home" className="banner bg-black bg-opacity-60 w-full">
-      <div className="w-11/12 md:w-10/12 mx-auto  px-2 md:px-8   flex lg:gap-14 items-center">
-        <div className="hidden lg:flex flex-col  gap-2">
+      <div className="w-11/12 md:w-10/12 mx-auto  px-2 md:px-8   flex xl:gap-14 items-center">
+        <div className="hidden xl:flex flex-col  gap-2">
           <a
             href="https://github.com/shahbaz-kamal"
             target="_blank"
@@ -69,8 +69,8 @@ const Banner = () => {
             </div>
           </a>
         </div>
-        <div className="flex flex-col-reverse lg:flex-row  lg:justify-between lg:flex-grow items-center gap-4  w-full ">
-          <div className=" lg:py-36 flex flex-col items-center  lg:items-start gap-2 mx-auto lg:mx-0 ">
+        <div className="flex flex-col-reverse xl:flex-row  xl:justify-between xl:flex-grow items-center gap-4  w-full ">
+          <div className="  xl:py-40 flex flex-col items-center  xl:items-start gap-2 mx-auto xl:mx-0 ">
             <h1 className="text-dark-color-text text-xl md:text-3xl  font-semibold ">
               Hello, <span className="text-dark-color-text">I'm</span>
             </h1>
@@ -104,7 +104,7 @@ const Banner = () => {
                 style={{ display: "none" }} // Hide the anchor tag
               />
             </button>
-            <div className="flex lg:hidden mt-4 mb-14 gap-3">
+            <div className="flex xl:hidden mt-4 mb-14  gap-3">
               <a
                 href="https://github.com/shahbaz-kamal"
                 target="_blank"
@@ -155,14 +155,15 @@ const Banner = () => {
               </a>
             </div>
           </div>
-          <div className="hidden lg:inline-flex lg:self-end lg:rounded-none lg:h-[420px] ">
+          <div className="hidden xl:inline-flex xl:self-end xl:rounded-none  xl:h-[500px] ">
             <img
               className="h-full w-full object-cover"
               src={shahbazImage}
               alt=""
             />
           </div>
-          <div className="mt-32 lg:hidden border-4 border-neutral  bg-[#a2d8d8] rounded-full w-80 h-80 px-2">
+          {/* Rounded Image */}
+          <div className="mt-32 xl:hidden border-4 border-neutral  bg-[#a2d8d8] rounded-full w-80 h-80 px-2">
             <img
               className="rounded-full h-full w-full  object-cover "
               src={shahbazImageSmall}

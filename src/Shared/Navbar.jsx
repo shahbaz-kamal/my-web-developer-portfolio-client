@@ -272,19 +272,38 @@ const Navbar = () => {
             </span>
           </span>
         </label>
-        <button
+        {/* <button
           onClick={handleDownload}
           className="text-sm md:text-xl flex items-center gap-2 py-2 px-3 rounded-full bg-light-accent  hover:bg-light-primary hover:text-white text-light-color-text dark:bg-dark-primary dark:hover:bg-dark-accent dark:hover:text-dark-color-text  transition ease-in-out duration-300 "
         >
           Resume <FaDownload />
-          {/* Hidden anchor tag to trigger the download */}
+        
           <a
-            href="/resume.pdf" // Path to your resume file
-            download="Shahbaz_Resume.pdf" // Optional: specify the filename
-            ref={downloadRef} // Using the ref to trigger the download
-            style={{ display: "none" }} // Hide the anchor tag
+            href="/resume.pdf" 
+            download="Shahbaz_Resume.pdf" 
+            ref={downloadRef} 
+            style={{ display: "none" }} 
           />
-        </button>
+        </button> */}
+           <button
+                      onClick={handleDownload}
+                      className="relative text-lg md:text-xl flex items-center gap-2 pl-3 rounded-full text-dark-color-text  dark:hover:text-light-color-text transition ease-in-out duration-300 border border-light-accent dark:border-dark-primary group overflow-hidden"
+                    >
+                      {/* Background Animation */}
+                      <span className="absolute inset-0 bg-light-accent dark:bg-dark-primary transform translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></span>
+        
+                      {/* Button Content */}
+                      <span className="relative z-10">Resume</span>
+                      <span className="relative z-10 bg-light-accent dark:bg-dark-primary rounded-full p-3 border-2 border-light-accent dark:border-dark-primary flex items-center justify-center">
+                        <FaDownload />
+                      </span>
+                      <a
+                        href="/resume.pdf" // Path to your resume file
+                        download="Shahbaz_Resume.pdf" // Optional: specify the filename
+                        ref={downloadRef} // Using the ref to trigger the download
+                        style={{ display: "none" }} // Hide the anchor tag
+                      />
+                    </button>
       </div>
     </div>
   );
