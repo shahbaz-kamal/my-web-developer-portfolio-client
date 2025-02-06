@@ -6,6 +6,7 @@ import Skills from "./Skills";
 import Education from "./Education";
 import MyProjects from "./MyProjects";
 import Contact from "./Contact";
+import Courses from "./Courses";
 
 const Home = () => {
   return (
@@ -21,6 +22,9 @@ const Home = () => {
       </section>
       <section className="w-11/12 md:w-10/12 mx-auto px-2 md:px-0">
         <Education></Education>
+      </section>
+      <section className="w-11/12 md:w-10/12 mx-auto px-2 md:px-0">
+       <Courses></Courses>
       </section>
       <section className="w-11/12 md:w-10/12 mx-auto px-2 md:px-0">
         <Skills></Skills>
