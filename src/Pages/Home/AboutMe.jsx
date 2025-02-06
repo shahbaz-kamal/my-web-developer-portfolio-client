@@ -9,10 +9,16 @@ const AboutMe = () => {
     >
       <div className="p-6 md:p-10">
         <div className="py-6 border-2 border-light-primary dark:border-dark-primary border-opacity-10 dark:border-opacity-10  rounded-md">
-          <header className="">
+          <header className="hidden md:block">
             <Title
               title={"About Me"}
               subTitle={"A Glimpse Into My Journey"}
+            ></Title>
+          </header>
+          <header className="md:hidden">
+            <Title
+              title={"About Me"}
+              subTitle={"My Journey"}
             ></Title>
           </header>
           <section>

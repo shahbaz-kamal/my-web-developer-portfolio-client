@@ -50,11 +50,14 @@ const Contact = () => {
   };
   return (
     <div id="contact" className="pt-5 pb-10">
-      <header>
+      <header className="hidden md:block">
         <Title
           title={"Contact Me"}
           subTitle={"Feel Free to Reach Out Anytime"}
         ></Title>
+      </header>
+      <header className="md:hidden">
+        <Title title={"Contact Me"} subTitle={"Reach Out Anytime"}></Title>
       </header>
 
       <section className="flex flex-col md:flex-row  md:items-center items-center md:justify-between gap-6">
@@ -62,14 +65,14 @@ const Contact = () => {
 
         <div className="w-full md:w-[65%] lg:w-[70%]">
           <div className="card bg-light-secondary dark:bg-dark-secondary bg-opacity-10 dark:bg-opacity-10 w-full  shrink-0 shadow-2xl pt-2 md:pt-4">
-            <h3 className="text-center text-light-primary text-xl md:text-2xl font-bold dark:text-dark-primary ">
+            <h3 className="text-center text-light-primary text-xl md:text-2xl font-bold dark:text-dark-primary px-2">
               Need help? Get in touch now!
             </h3>
             <form
               onSubmit={handleSubmit}
-              className="card-body grid grid-cols-1 md:grid-cols-2"
+              className="card-body grid grid-cols-1 lg:grid-cols-2"
             >
-              <div className="form-control">
+              <div className="form-control ">
                 <input
                   name="name"
                   type="text"
@@ -78,7 +81,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="form-control">
+              <div className="form-control ">
                 <input
                   name="email"
                   type="email"
@@ -87,7 +90,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="form-control">
+              <div className="form-control ">
                 <input
                   name="phone"
                   type="number"
@@ -96,7 +99,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="form-control">
+              <div className="form-control ">
                 <input
                   name="subject"
                   type="text"
@@ -108,7 +111,7 @@ const Contact = () => {
               {/* category */}
               <div
                 className={`form-control col-span-1 ${
-                  other ? "md:col-span-1 " : "md:col-span-2"
+                  other ? "lg:col-span-1 " : "lg:col-span-2"
                 }`}
               >
                 <select
@@ -173,7 +176,7 @@ const Contact = () => {
                   />
                 </div>
               )}
-              <div className="form-control md:col-span-2">
+              <div className="form-control col-span-1 lg:col-span-2">
                 <textarea
                   name="message"
                   placeholder="Message"
@@ -183,7 +186,7 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <div className="form-control mt-6 md:col-span-2">
+              <div className="form-control mt-6 col-span-1 lg:col-span-2">
                 <button className="py-2 font-bold bg-light-accent text-light-color-text dark:bg-dark-primary hover:bg-light-primary hover:text-dark-color-text dark:hover:bg-dark-accent rounded-full transition duration-300 ease-in-out">
                   Send me Message
                 </button>
@@ -208,8 +211,8 @@ const Contact = () => {
               </p>
             </div>
           </div>
-            {/* email */}
-            <a
+          {/* email */}
+          <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=shahbazkamal384@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -259,7 +262,6 @@ const Contact = () => {
               </p>
             </div>
           </div>
-        
         </div>
       </section>
     </div>

@@ -12,11 +12,19 @@ const MyProjects = () => {
   console.log(projects);
   return (
     <div id="my-project" className=" mx-auto px-3">
-      <header>
+      <header className="hidden md:block">
         <Title
           title={"My Projects"}
           subTitle={
-            "A brief summary of the project's objectives, challenges, and outcomes."
+            "Project Scopes, Challenges, and Results"
+          }
+        ></Title>
+      </header>
+      <header className="md:hidden">
+        <Title
+          title={"My Projects"}
+          subTitle={
+            "Project Overview"
           }
         ></Title>
       </header>

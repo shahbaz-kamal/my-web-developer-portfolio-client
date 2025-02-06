@@ -5,8 +5,11 @@ import ExperienceCard from "./ExperienceCard";
 const Experience = () => {
   return (
     <div id="experience">
-      <header>
+      <header className="hidden md:block">
         <Title title={"Work Experience"} subTitle={"Technical & Professional Skills in Action"}></Title>
+      </header>
+      <header className="md:hidden">
+        <Title title={"Work Experience"} subTitle={"Skills in Action"}></Title>
       </header>
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <ExperienceCard
