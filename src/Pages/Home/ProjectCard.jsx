@@ -25,8 +25,8 @@ const ProjectCard = ({ project }) => {
     liveLink,
     clientGitRepo,
     serverGitRepo,
-    struggle,
-    lackings,
+    challenges,
+    improvements,
     publicationDate,
     technologyUsed,
   } = project;

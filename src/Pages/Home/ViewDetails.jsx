@@ -38,8 +38,8 @@ const ViewDetails = () => {
     liveLink,
     clientGitRepo,
     serverGitRepo,
-    struggle,
-    lackings,
+    challenges,
+    improvements,
     publicationDate,
     features,
     technologyUsed,
@@ -119,7 +119,7 @@ const ViewDetails = () => {
               <div>
                 <a href={clientGitRepo} target="_blank">
                   <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
-                    {" "}
+            
                     Git Client
                   </button>
                 </a>
@@ -201,10 +201,10 @@ const ViewDetails = () => {
 
           <div className="mb-2 md:mb-3">
             <h3 className="text-center font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-3xl mb-2 md:mb-3">
-              🥶 Struggles
+              🥶 Challenges
             </h3>
             <span className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
-              {struggle}
+              {challenges}
             </span>
           </div>
           <div className="mb-2 md:mb-6">
@@ -214,10 +214,10 @@ const ViewDetails = () => {
                 src="https://cdn-icons-png.flaticon.com/128/17243/17243559.png"
                 alt=""
               />
-              Lackings
+              Improvements
             </h3>
             <p className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
-              {lackings}
+              {improvements}
             </p>
           </div>
         </div>

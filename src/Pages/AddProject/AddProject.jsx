@@ -51,8 +51,8 @@ const AddProject = () => {
     const liveLink = e.target.liveLink.value;
     const clientGitRepo = e.target.clientGitRepo.value;
     const serverGitRepo = e.target.serverGitRepo.value || null;
-    const struggle = e.target.struggle.value;
-    const lackings = e.target.lackings.value;
+    const challenges = e.target.challenges.value;
+    const improvements = e.target.improvements.value;
     const imageDescription = e.target.imageDescription.value.split("\n");
     const features = e.target.features.value.split("\n");
     const imageAndDescriptions = images.map((url, index) => ({
@@ -67,8 +67,8 @@ const AddProject = () => {
       liveLink,
       clientGitRepo,
       serverGitRepo,
-      struggle,
-      lackings,
+      challenges,
+      improvements,
       publicationDate: publishedDate,
       features,
       technologyUsed,
@@ -172,17 +172,17 @@ const AddProject = () => {
             </div>
             <div className="form-control">
               <input
-                name="struggle"
+                name="challenges"
                 type="text"
-                placeholder="My Struggle"
+                placeholder="My challenges"
                 className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
               />
             </div>
             <div className="form-control">
               <input
-                name="lackings"
+                name="improvements"
                 type="text"
-                placeholder="My Lackings"
+                placeholder="My improvements"
                 className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
               />
             </div>
