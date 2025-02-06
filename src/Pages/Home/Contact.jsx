@@ -225,7 +225,7 @@ const Contact = () => {
             {/* Details */}
             <div>
               <h3 className="font-semibold text-base md:text-xl text-light-color-text dark:text-dark-color-text">
-                Email
+                Email Me
               </h3>
               <p className="text-light-color-text dark:text-dark-color-text">
                 shahbazkamal384@gmail.com
@@ -240,7 +240,7 @@ const Contact = () => {
             </div>
             <div>
               <h3 className="font-semibold text-base md:text-xl text-light-color-text dark:text-dark-color-text">
-                Phone
+                Call Me
               </h3>
               <p className="text-light-color-text dark:text-dark-color-text">
                 +880 1799839985

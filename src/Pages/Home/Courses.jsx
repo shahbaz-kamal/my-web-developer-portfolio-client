@@ -6,10 +6,16 @@ import { CiCalendarDate } from "react-icons/ci";
 const Courses = () => {
   return (
     <div>
-      <header>
+      <header className="hidden md:block">
         <Title
           title={"Courses & Certifications"}
           subTitle={"Certifications & Achievements"}
+        ></Title>
+      </header>
+      <header className="md:hidden">
+        <Title
+          title={"Courses & Certifications"}
+          subTitle={" Achievements"}
         ></Title>
       </header>
       <section className="grid md:grid-cols-2 gap-6">
