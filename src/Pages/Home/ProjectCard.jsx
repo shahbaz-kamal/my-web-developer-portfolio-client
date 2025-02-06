@@ -112,13 +112,13 @@ const ProjectCard = ({ project }) => {
               Git Client
             </button>
           </a>
-          {serverGitRepo && (
+          {/* {serverGitRepo && (
             <a href={serverGitRepo} target="_blank">
               <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
                 Git Server
               </button>
             </a>
-          )}
+          )} */}
         </div>
 
         {/* <div className="card-actions justify-center">

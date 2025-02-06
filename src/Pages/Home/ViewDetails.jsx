@@ -8,7 +8,12 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 
-import { Pagination, EffectCoverflow, Navigation,Autoplay } from "swiper/modules";
+import {
+  Pagination,
+  EffectCoverflow,
+  Navigation,
+  Autoplay,
+} from "swiper/modules";
 import { useParams } from "react-router-dom";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
 import Title from "../../Component/Title";
@@ -18,6 +23,7 @@ import { format } from "date-fns";
 // import "swiper/css/effect-cards";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Fade } from "react-awesome-reveal";
 
 const ViewDetails = () => {
   const [project, setProject] = useState([]);
@@ -72,15 +78,19 @@ const ViewDetails = () => {
             pagination={true}
             navigation={true}
             autoplay={{
-              delay: 2000, 
-              disableOnInteraction: false, 
+              delay: 2000,
+              disableOnInteraction: false,
             }}
             onSwiper={(swiper) => {
               // Pause autoplay on hover
-              swiper.el.addEventListener("mouseenter", () => swiper.autoplay.stop());
-              swiper.el.addEventListener("mouseleave", () => swiper.autoplay.start());
+              swiper.el.addEventListener("mouseenter", () =>
+                swiper.autoplay.stop()
+              );
+              swiper.el.addEventListener("mouseleave", () =>
+                swiper.autoplay.start()
+              );
             }}
-            modules={[EffectCoverflow, Pagination, Navigation,Autoplay]}
+            modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
             className="mySwiper"
           >
             {imageAndDescriptions
@@ -101,83 +111,94 @@ const ViewDetails = () => {
         </div>
 
         <div className="px-6 pb-6 w-full">
-          <h2 className=" text-center text-light-color-text dark:text-dark-color-text text-lg md:text-4xl mb-2 md:mb-3 font-bold ">
-            {projectTitle}
-          </h2>
-          <p className=" text-light-color-text dark:text-dark-color-text text base md:text-lg mb-3 md:mb-6">
-            {projectDescription}
-          </p>
-          <div className="w-full flex flex-col lg:flex-row gap-3 mb-3 md:mb-6">
-            <div className="flex items-center gap-3 w-full justify-center flex-wrap md:flex-nowrap">
-              <div>
-                <a href={liveLink} target="_blank">
-                  <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
-                    Live Link
-                  </button>
-                </a>
-              </div>
-              <div>
-                <a href={clientGitRepo} target="_blank">
-                  <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
-            
-                    Git Client
-                  </button>
-                </a>
-              </div>
-              {serverGitRepo && (
+          <Fade triggerOnce={true} direction="left">
+            <h2 className=" text-center text-light-color-text dark:text-dark-color-text text-lg md:text-4xl mb-2 md:mb-3 font-bold ">
+              {projectTitle}
+            </h2>
+          </Fade>{" "}
+          <Fade triggerOnce={true} direction="right">
+            <p className=" text-light-color-text dark:text-dark-color-text text base md:text-lg mb-3 md:mb-6">
+              {projectDescription}
+            </p>
+          </Fade>{" "}
+          <Fade triggerOnce={true} direction="left">
+            <div className="w-full flex flex-col lg:flex-row gap-3 mb-3 md:mb-6">
+              <div className="flex items-center gap-3 w-full justify-center flex-wrap md:flex-nowrap">
                 <div>
-                  <a href={serverGitRepo} target="_blank">
+                  <a href={liveLink} target="_blank">
                     <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
-                      Git Server
+                      Live Link
                     </button>
                   </a>
                 </div>
-              )}
+                <div>
+                  <a href={clientGitRepo} target="_blank">
+                    <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+                      Git Client
+                    </button>
+                  </a>
+                </div>
+                {/* {serverGitRepo && (
+                  <div>
+                    <a href={serverGitRepo} target="_blank">
+                      <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+                        Git Server
+                      </button>
+                    </a>
+                  </div>
+                )} */}
 
-              <div>
-                <p className="">
-                  <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
-                    Publication Date:
-                  </span>
-                  <span className=" text-light-primary dark:text-dark-primary">
-                    {/* {format(new Date(publicationDate), "PPP")} */}{" "}
-                    {publicationDate
-                      ? format(new Date(publicationDate), "PP")
-                      : "N/A"}
-                  </span>
-                </p>
+                <div>
+                  <p className="">
+                    <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1">
+                      Publication Date:
+                    </span>
+                    <span className=" text-light-primary dark:text-dark-primary">
+                      {/* {format(new Date(publicationDate), "PPP")} */}{" "}
+                      {publicationDate
+                        ? format(new Date(publicationDate), "PP")
+                        : "N/A"}
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </Fade>
           {/* technology */}
           {technologyUsed && (
             <div className="mb-2 md:mb-6">
-              <h3 className="flex items-center justify-center gap-2 text-center text-light-color-text dark:text-dark-color-text text-lg md:text-3xl  mb-2 font-bold  md:mb-3">
-                {/* <img
+              <Fade triggerOnce={true} direction="left">
+                <h3 className="flex items-center justify-center gap-2 text-center text-light-color-text dark:text-dark-color-text text-lg md:text-3xl  mb-2 font-bold  md:mb-3">
+                  {/* <img
                   className="w-8 h-8"
                   src="https://cdn-icons-png.flaticon.com/128/1087/1087927.png"
                   alt=""
                 /> */}
-                🛠️ Technology Used
-              </h3>
+                  🛠️ Technology Used
+                </h3>
+              </Fade>
               <div className="flex gap-4 justify-center items-center flex-wrap">
                 {technologyUsed.map((tech, index) => (
-                  <div className="w-12 h-12 md:w-14 md:h-14 p-1">
-                    <img
-                      className="w-full h-full object-cover"
-                      src={tech}
-                      alt=""
-                    />
-                  </div>
+                  <Fade triggerOnce={true} cascade={false} direction="up" delay={index * 50}>
+                    <div className="w-12 h-12 md:w-14 md:h-14 p-1">
+                      <img
+                        className="w-full h-full object-cover"
+                        src={tech}
+                        alt=""
+                      />
+                    </div>
+                  </Fade>
                 ))}
               </div>
             </div>
           )}
           {/* features */}
           <div className="mb-3 md:mb-6">
-            <h3 className="text-center text-light-color-text dark:text-dark-color-text text-lg md:text-3xl  mb-2 font-bold  md:mb-3">
-              ✨ Features
-            </h3>
+            <Fade triggerOnce={true} direction="left">
+              <h3 className="text-center text-light-color-text dark:text-dark-color-text text-lg md:text-3xl  mb-2 font-bold  md:mb-3">
+                ✨ Features
+              </h3>
+            </Fade>
             <div className="flex flex-col gap-2 md:gap-3">
               {features &&
                 features.map((feature, index) => {
@@ -185,40 +206,56 @@ const ViewDetails = () => {
 
                   return (
                     <div key={index}>
-                      <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-xl">
-                        {index + 1}. {title}:
-                      </span>{" "}
-                      {/* Title in bold */}
-                      <span className="text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
-                        {des}
-                      </span>{" "}
-                      {/* Description with some spacing */}
+                   
+                      <Fade triggerOnce={true}
+                        cascade={false}
+                        direction="right"
+                        delay={index * 30}
+                      >
+                        <span className="font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-xl">
+                          {index + 1}. {title}:
+                        </span>
+                    
+                        <span className="text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
+                          {des}
+                        </span>
+             
+                      </Fade>
                     </div>
                   );
                 })}
             </div>
           </div>
-
           <div className="mb-2 md:mb-3">
-            <h3 className="text-center font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-3xl mb-2 md:mb-3">
-              🥶 Challenges
-            </h3>
-            <span className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
-              {challenges}
-            </span>
+            <Fade triggerOnce={true} direction="left">
+             
+              <h3 className="text-center font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-3xl mb-2 md:mb-3">
+                🥶 Challenges
+              </h3>
+            </Fade>
+            <Fade triggerOnce={true} direction="right">
+              <span className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
+                {challenges}
+              </span>
+            </Fade>
           </div>
           <div className="mb-2 md:mb-6">
-            <h3 className="text-center flex items-center justify-center font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-3xl mb-2 md:mb-3 gap-2">
-              <img
-                className="w-10 h-10"
-                src="https://cdn-icons-png.flaticon.com/128/17243/17243559.png"
-                alt=""
-              />
-              Improvements
-            </h3>
-            <p className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
-              {improvements}
-            </p>
+        
+            <Fade triggerOnce={true} direction="left">
+              <h3 className="text-center flex items-center justify-center font-semibold text-light-color-text dark:text-dark-color-text mr-1 text-lg md:text-3xl mb-2 md:mb-3 gap-2">
+                <img
+                  className="w-10 h-10"
+                  src="https://cdn-icons-png.flaticon.com/128/17243/17243559.png"
+                  alt=""
+                />
+                Improvements
+              </h3>
+            </Fade>
+            <Fade triggerOnce={true} direction="right">
+              <p className=" text-light-color-text dark:text-dark-color-text text-lg md:text-xl">
+                {improvements}
+              </p>
+            </Fade>
           </div>
         </div>
       </section>
