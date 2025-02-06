@@ -8,6 +8,7 @@ import { HashLink } from "react-router-hash-link";
 import UseAuth from "../Hooks/UseAuth";
 import UseMessages from "../Hooks/UseMessages";
 import { TiThMenuOutline } from "react-icons/ti";
+import { Fade } from "react-awesome-reveal";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState(""); // Track active section
@@ -22,6 +23,8 @@ const Navbar = () => {
         "skills",
         "my-project",
         "contact",
+        "course",
+        "service",
       ]; // Add all section IDs here
       let currentSection = "";
 
@@ -71,11 +74,13 @@ const Navbar = () => {
         }}
         className={`${
           activeSection === "home"
-            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
-            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary "
+            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  py-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  py-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary "
         }`}
       >
-        <li className="px-2">Home</li>
+        <Fade triggerOnce={true} direction="left">
+          <li className="px-2">Home</li>
+        </Fade>
       </HashLink>
       <HashLink
         to="#about-me"
@@ -89,8 +94,8 @@ const Navbar = () => {
             ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
             : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
         }`}
-      >
-        <li className="px-2">About Me</li>
+      >  <Fade triggerOnce={true} direction="left">
+        <li className="px-2">About Me</li></Fade>
       </HashLink>
       <HashLink
         to="#experience"
@@ -104,8 +109,8 @@ const Navbar = () => {
             ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
             : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
         }`}
-      >
-        <li className="px-2">Experience</li>
+      >  <Fade triggerOnce={true} direction="left">
+        <li className="px-2">Experience</li></Fade>
       </HashLink>
       <HashLink
         to="/#education"
@@ -119,8 +124,23 @@ const Navbar = () => {
             ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
             : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary "
         }`}
-      >
-        <li className="px-2">Education</li>
+      >  <Fade triggerOnce={true} direction="left">
+        <li className="px-2">Education</li></Fade>
+      </HashLink>
+      <HashLink
+        to="/#course"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default HashLink behavior
+          scrollToSection("course");
+          navigate("/");
+        }}
+        className={`${
+          activeSection === "course"
+            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary "
+        }`}
+      >  <Fade triggerOnce={true} direction="down">
+        <li className="px-2">Courses</li></Fade>
       </HashLink>
       <HashLink
         to="/#skills"
@@ -134,8 +154,8 @@ const Navbar = () => {
             ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
             : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary "
         }`}
-      >
-        <li className="px-2">Skills</li>
+      >  <Fade triggerOnce={true} direction="right">
+        <li className="px-2">Skills</li></Fade>
       </HashLink>
       <HashLink
         to="/#my-project"
@@ -149,8 +169,23 @@ const Navbar = () => {
             ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
             : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
         }`}
-      >
-        <li className="px-2">Projects</li>
+      >  <Fade triggerOnce={true} direction="right">
+        <li className="px-2">Projects</li></Fade>
+      </HashLink>
+      <HashLink
+        to="/#service"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default HashLink behavior
+          scrollToSection("service");
+          navigate("/");
+        }}
+        className={`${
+          activeSection === "service"
+            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+        }`}
+      >  <Fade triggerOnce={true} direction="right">
+        <li className="px-2">Services</li></Fade>
       </HashLink>
       <HashLink
         to="/#contact"
@@ -164,8 +199,8 @@ const Navbar = () => {
             ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary "
             : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
         }`}
-      >
-        <li className="px-2">Contact</li>
+      >  <Fade triggerOnce={true} direction="right">
+        <li className="px-2">Contact</li></Fade>
       </HashLink>
 
       {/* Only for me */}
@@ -211,8 +246,8 @@ const Navbar = () => {
   return (
     <div className="w-11/12 md:w-10/12 mx-auto navbar md:px-5 ">
       <div className="navbar-start inline-flex">
-        <div className="dropdown xl:flex">
-          <div tabIndex={0} role="button" className="btn btn-ghost xl:hidden">
+        <div className="dropdown 2xl:flex">
+          <div tabIndex={0} role="button" className="btn btn-ghost 2xl:hidden">
             <div className="  text-light-primary dark:text-dark-primary ">
               <TiThMenuOutline size={25} />
             </div>
@@ -225,51 +260,59 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="w-14">
-          <img
-            className="w-full h-full object-cover rounded-full"
-            src={logo}
-            alt=""
-          />
+          <Fade triggerOnce={true} direction="left">
+            <img
+              className="w-full h-full object-cover rounded-full"
+              src={logo}
+              alt=""
+            />
+          </Fade>
         </div>
       </div>
-      <div className="navbar-center hidden xl:flex">
+      <div className="navbar-center hidden 2xl:flex">
         <ul className="menu menu-horizontal px-1 gap-3">{links}</ul>
       </div>
+
       <div className="navbar-end flex-grow gap-3">
-        <label className="flex cursor-pointer gap-2 items-center">
-          <span className="label-text text-light-color-text dark:text-dark-color-text transition ease-in-out duration-300">
-            <span className="hidden md:hidden text-light-accent dark:text-dark-color-text">
-              Light
+        {" "}
+        <Fade triggerOnce={true} direction="right">
+          <label className="flex cursor-pointer gap-2 items-center">
+            <span className="label-text text-light-color-text dark:text-dark-color-text transition ease-in-out duration-300">
+              <span className="hidden md:hidden text-light-accent dark:text-dark-color-text">
+                Light
+              </span>
+              <span className="hidden">
+                <CiLight size={25} />
+              </span>
             </span>
-            <span className="hidden">
-              <CiLight size={25} />
+            <input
+              onChange={(e) => setIsDarkMode(!isDarkMode)}
+              type="checkbox"
+              value="synthwave"
+              className="toggle theme-controller text-light-primary  dark:text-dark-primary"
+            />
+            <span className="label-text text-dark-primary dark:text-dark-color-text transition ease-in-out duration-300">
+              <span className="hidden md:hidden font-semibold ">dark</span>
+              <span className="hidden">
+                <CiDark size={25} />
+              </span>
             </span>
-          </span>
-          <input
-            onChange={(e) => setIsDarkMode(!isDarkMode)}
-            type="checkbox"
-            value="synthwave"
-            className="toggle theme-controller text-light-primary  dark:text-dark-primary"
-          />
-          <span className="label-text text-dark-primary dark:text-dark-color-text transition ease-in-out duration-300">
-            <span className="hidden md:hidden font-semibold ">dark</span>
-            <span className="hidden">
-              <CiDark size={25} />
-            </span>
-          </span>
-        </label>
-        <button
-          onClick={handleDownload}
-          className="text-sm md:text-xl flex items-center gap-2 py-2 px-3 rounded-full bg-light-accent  hover:bg-light-primary hover:text-white text-light-color-text dark:bg-dark-primary dark:hover:bg-dark-accent dark:hover:text-dark-color-text  transition ease-in-out duration-300 "
-        >
-          Resume <FaDownload />
-          <a
-            href="/resume.pdf"
-            download="Shahbaz_Resume.pdf"
-            ref={downloadRef}
-            style={{ display: "none" }}
-          />
-        </button>
+          </label>
+        </Fade>
+        <Fade triggerOnce={true} direction="right">
+          <button
+            onClick={handleDownload}
+            className="text-sm md:text-xl flex items-center gap-2 py-2 px-3 rounded-full bg-light-accent  hover:bg-light-primary hover:text-white text-light-color-text dark:bg-dark-primary dark:hover:bg-dark-accent dark:hover:text-dark-color-text  transition ease-in-out duration-300 "
+          >
+            Resume <FaDownload />
+            <a
+              href="/resume.pdf"
+              download="Shahbaz_Resume.pdf"
+              ref={downloadRef}
+              style={{ display: "none" }}
+            />
+          </button>
+        </Fade>
       </div>
     </div>
   );

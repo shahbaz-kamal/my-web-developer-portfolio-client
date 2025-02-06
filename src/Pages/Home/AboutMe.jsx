@@ -1,5 +1,6 @@
 import React from "react";
 import Title from "../../Component/Title";
+import { Fade } from "react-awesome-reveal";
 
 const AboutMe = () => {
   return (
@@ -23,6 +24,7 @@ const AboutMe = () => {
           </header>
           <section>
             <ul className="px-4 text-light-color-text dark:text-dark-color-text text-base md:text-lg opacity-80 flex flex-col gap-2">
+              <Fade direction="right" triggerOnce={true}>
               <li>
                 <span className="font-semibold">From C++ to JavaScript: </span>
                 My programming journey began in HSC first year (equivalent to A
@@ -32,7 +34,7 @@ const AboutMe = () => {
                 Later, when I rediscovered programming with{" "}
                 <strong>javascript</strong>, I decided to pursue it as a career
                 and never looked back.
-              </li>
+              </li></Fade> <Fade direction="left" triggerOnce={true}>
               <li>
                 <span className="font-semibold">
                   Expertise in MERN Stack Development :{" "}
@@ -48,14 +50,14 @@ const AboutMe = () => {
                 intuitive digital experiences that meet clients' needs and
                 exceed user expectations, all while maintaining high standards
                 of code quality and performance.
-              </li>
+              </li></Fade>  <Fade direction="right" triggerOnce={true}>
               <li>
                 <span className="font-semibold">Hobbies & Passions : </span>
                 Beyond coding, cricket has taught me teamwork and strategy,
                 while reading books expands my knowledge and watching movies
                 fuels my creativity. I’m always eager to learn, tackle new
                 challenges, and build impactful solutions in web development.
-              </li>
+              </li></Fade> 
             </ul>
 
             {/* <p className="px-4 text-light-color-text dark:text-dark-color-text text-base md:text-lg opacity-80">

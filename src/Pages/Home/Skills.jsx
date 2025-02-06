@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Title from "../../Component/Title";
 import SkillsCard from "./SkillsCard";
+import { Fade } from "react-awesome-reveal";
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
@@ -22,7 +23,8 @@ const Skills = () => {
         {/* Excelent div*/}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
           {skills.map((skill, index) => (
-            <SkillsCard key={index} skill={skill}></SkillsCard>
+            <Fade triggerOnce={true} cascade={false} direction="up" delay={index*40}>
+            <SkillsCard key={index} skill={skill}></SkillsCard></Fade>
           ))}
         </div>
 

@@ -17,7 +17,7 @@ import { MdMonitor } from "react-icons/md";
 
 const Services = () => {
   return (
-    <div>
+    <div id="service">
       <header>
         <Title
           title={"My services"}
@@ -26,7 +26,7 @@ const Services = () => {
       </header>
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
         {/* services card */}
-        <Fade duration={1200} direction="right">
+        <Fade duration={1200} direction="right" triggerOnce={true}>
           {/*  Custom Web Application Development */}
           <div className="h-full flex flex-col justify-center items-center space-y-3 rounded-md p-6 border border-light-primary border-opacity-20 dark:bg-neutral  dark:border-dark-secondary dark:border-opacity-50 hover:bg-light-primary hover:bg-opacity-10 dark:hover:bg-dark-primary dark:hover:bg-opacity-10 transition duration-300 ease-in-out">
             <div className="text-light-accent dark:text-dark-primary">
@@ -83,7 +83,7 @@ const Services = () => {
         </Fade>
 
         {/* services card */}
-        <Fade duration={1200} direction="left">
+        <Fade duration={1200} direction="left" triggerOnce={true}>
           {/*E-commerce Website Development*/}
           <div className="h-full  flex flex-col justify-center items-center space-y-3 rounded-md p-6 border border-light-primary border-opacity-20 dark:bg-neutral  dark:border-dark-secondary dark:border-opacity-50 hover:bg-light-primary hover:bg-opacity-10 dark:hover:bg-dark-primary dark:hover:bg-opacity-10 transition duration-300 ease-in-out">
             <div className="text-light-accent dark:text-dark-primary">

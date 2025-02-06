@@ -33,7 +33,7 @@ const ProjectCard = ({ project }) => {
   console.log(cardImages);
   return (
     <div
-      className="card bg-base-200  dark:bg-dark-primary dark:bg-opacity-20  shadow-xl border border-light-primary border-opacity-20 dark:border-dark-secondary dark:border-opacity-50"
+      className="card bg-base-200  dark:bg-dark-primary dark:bg-opacity-20  shadow-xl border border-light-primary border-opacity-20 dark:border-dark-secondary dark:border-opacity-50 h-full"
       onMouseEnter={() => {
         if (swiperRef.current && swiperRef.current.swiper) {
           swiperRef.current.swiper.autoplay.start(); // Start autoplay on hover
