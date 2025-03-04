@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Title from "../../Component/Title";
 import resultIcon from "../../assets/result.png";
 import { CiCalendarDate } from "react-icons/ci";
 import { Fade } from "react-awesome-reveal";
+import { LiaCertificateSolid } from "react-icons/lia";
+import CertificateModal from "./CertificateModal";
 
 const Courses = () => {
+  const [certificateLink, setCertificateLink] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const handleProgramingHeroCertificate = () => {
+    setCertificateLink("https://i.ibb.co.com/Gft3Hpq6/certificate.jpg");
+    setIsOpen(true);
+  };
+  const handleTicCertificate=()=>{
+    setCertificateLink("https://i.ibb.co.com/vxdndtf0/tici-certificate.jpg");
+    setIsOpen(true);
+  }
   return (
     <div id="course">
       <header className="hidden md:block">
@@ -21,7 +33,7 @@ const Courses = () => {
       </header>
       <section className="grid md:grid-cols-2 gap-6">
         <Fade triggerOnce={true} direction="left">
-          <div className="border-x-2 border-x-light-accent dark:border-x-dark-primary p-2 rounded-lg flex flex-col justify-start">
+          <div className="border-x-2 border-x-light-accent dark:border-x-dark-primary p-2 rounded-lg flex flex-col justify-start h-full">
             <h3 className="font-bold text-xl md:text-2xl text-light-color-text dark:text-dark-color-text">
               Complete Web Development Course
             </h3>
@@ -31,7 +43,7 @@ const Courses = () => {
             <div className="flex flex-col xl:flex-row justify-between mb-2">
               <p className="text-sm md:text-base  text-light-color-text dark:text-dark-color-text flex gap-2 items-center mb-2">
                 <span className="text-light-accent dark:text-dark-primary">
-                  <CiCalendarDate size={30} />
+                  <CiCalendarDate size={35} />
                 </span>
                 <div>
                   <p className="text-base md:text-lg">Jun 2024 to Jan 2025</p>
@@ -47,6 +59,20 @@ const Courses = () => {
                 </div>
               </p>
             </div>
+            <p className="text-sm md:text-base  text-light-color-text dark:text-dark-color-text flex gap-2 items-center mb-2">
+              <span className="text-light-accent dark:text-dark-primary">
+                <LiaCertificateSolid size={35} />
+              </span>
+              <div>
+            
+                <p
+                  onClick={handleProgramingHeroCertificate}
+                  className="text-base md:text-lg  font-bold cursor-pointer"
+                >
+                  View Certificate
+                </p>
+              </div>
+            </p>
             <div className="flex flex-wrap gap-2 items-center justify-center">
               <div className="w-10 h-10">
                 <img
@@ -116,7 +142,7 @@ const Courses = () => {
         </Fade>
         <Fade triggerOnce={true} direction="right">
           {" "}
-          <div className="border-x-2 border-x-light-accent dark:border-x-dark-primary p-2 rounded-lg flex flex-col justify-start">
+          <div className="border-x-2 border-x-light-accent dark:border-x-dark-primary p-2 rounded-lg flex flex-col justify-start h-full">
             <h3 className="font-bold text-xl md:text-2xl text-light-color-text dark:text-dark-color-text">
               Chairmans Award for scholastics Excellence
             </h3>
@@ -136,6 +162,20 @@ const Courses = () => {
             <p>
               Received for Securing 3rd Merit Position with a CGPA of 3.77 in
               the 3rd Year, 1st Semester.
+            </p>
+            <p className="text-sm md:text-base  text-light-color-text dark:text-dark-color-text flex gap-2 items-center mb-2">
+              <span className="text-light-accent dark:text-dark-primary">
+                <LiaCertificateSolid size={35} />
+              </span>
+              <div>
+            
+                <p
+                  onClick={handleTicCertificate}
+                  className="text-base md:text-lg  font-bold cursor-pointer"
+                >
+                  View Certificate
+                </p>
+              </div>
             </p>
             {/* <div className="flex flex-wrap gap-2 items-center justify-center">
             <div className="w-10 h-10">
@@ -204,6 +244,14 @@ const Courses = () => {
           </div> */}
           </div>
         </Fade>
+        {/* modal */}
+        <section className="w-1/2">
+          <CertificateModal
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            certificats={certificateLink}
+          ></CertificateModal>
+        </section>
       </section>
     </div>
   );
