@@ -22,7 +22,7 @@ const Education = () => {
           <EducationCard
             degree="B.Sc. in Electrical & Electronic Engineering"
             institution={
-              "Bangabandhu Sheikh Mujibur Rahman Science & Technology University"
+              "Gopalganj Science & Technology University"
             }
             timeline={"2016-2019"}
             gpa={"3.50"}
