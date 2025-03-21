@@ -159,7 +159,7 @@ const Courses = () => {
                 </div>
               </p>
             </div>
-            <p>
+            <p className="text-light-color-text dark:text-dark-color-text text-base md:text-lg mb-1">
               Received for Securing 3rd Merit Position with a CGPA of 3.77 in
               the 3rd Year, 1st Semester.
             </p>
