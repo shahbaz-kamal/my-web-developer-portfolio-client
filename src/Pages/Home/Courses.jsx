@@ -147,7 +147,7 @@ const Courses = () => {
               Chairmans Award for scholastics Excellence
             </h3>
             <p className="text-lg md:text-xl font-semibold text-light-accent dark:text-dark-primary mb-2">
-              Bangabandhu Sheikh Mujibur Rahman Science & Technology University
+             Gopalganj Science & Technology University
             </p>
             <div className="flex flex-col xl:flex-row justify-between mb-2">
               <p className="text-sm md:text-base  text-light-color-text dark:text-dark-color-text flex gap-2 items-center mb-2">
