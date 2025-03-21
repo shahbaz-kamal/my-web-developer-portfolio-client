@@ -97,7 +97,7 @@ const Navbar = () => {
       >  <Fade triggerOnce={true} direction="left">
         <li className="px-2">About Me</li></Fade>
       </HashLink>
-      <HashLink
+      {/* <HashLink
         to="#experience"
         onClick={(e) => {
           e.preventDefault(); // Prevent default HashLink behavior
@@ -111,7 +111,7 @@ const Navbar = () => {
         }`}
       >  <Fade triggerOnce={true} direction="left">
         <li className="px-2">Experience</li></Fade>
-      </HashLink>
+      </HashLink> */}
       <HashLink
         to="/#education"
         onClick={(e) => {
