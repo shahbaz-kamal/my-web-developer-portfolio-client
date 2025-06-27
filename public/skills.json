@@ -20,6 +20,11 @@
     "image_dark": "https://i.ibb.co.com/4RwvC7Q1/js-dark.png"
   },
   {
+    "name": "Typescript",
+    "image": "https://img.icons8.com/?size=48&id=uJM6fQYqDaZK&format=png",
+    "image_dark": "https://img.icons8.com/?size=50&id=cHBUT9SmrD2V&format=png"
+  },
+  {
     "name": "Firebase",
     "image": "https://i.ibb.co.com/C5hww77M/firebase.png",
     "image_dark": "https://i.ibb.co.com/99JwhJkD/firebase-dark.png"
@@ -43,5 +48,11 @@
     "name": "MongoDB",
     "image": "https://i.ibb.co.com/VQpcJZY/mongoDB.png",
     "image_dark": "https://i.ibb.co.com/PGVwVPD6/mongo-DB-dark.png"
+  }
+  ,
+  {
+    "name": "PostgreSQL",
+    "image": "https://img.icons8.com/?size=48&id=38561&format=png",
+    "image_dark": "https://img.icons8.com/?size=50&id=36440&format=png"
   }
 ]

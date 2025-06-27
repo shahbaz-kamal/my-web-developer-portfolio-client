@@ -18,9 +18,9 @@ const Home = () => {
       <section className=" px-2 md:px-0">
         <AboutMe></AboutMe>
       </section>
-      {/* <section className="w-11/12 md:w-10/12 mx-auto px-2 md:px-0">
+      <section className="w-11/12 md:w-10/12 mx-auto px-2 md:px-0">
         <Experience></Experience>
-      </section> */}
+      </section>
       <section className="w-11/12 md:w-10/12 mx-auto px-2 md:px-0">
         <Education></Education>
       </section>
