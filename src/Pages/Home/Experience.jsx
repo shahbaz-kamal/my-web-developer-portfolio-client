@@ -21,7 +21,7 @@ const Experience = () => {
             designation={"Data Artist"}
             companyName={"Adiva Graphics"}
             from={"February 2024"}
-            to={"Present"}
+            to={"September 2024"}
             location={"House:71, Road:8, Baridhara DOHS, Dhaka, Bangladesh"}
             details={
               "I worked extensively with Microsoft PowerPoint and Excel to create data-driven charts and presentations, ensuring accurate data output to meet project objectives. I was responsible for analyzing and visualizing data in various chart formats and integrating them into PowerPoint slides. Additionally, I conducted quality control on online surveys, ensuring that survey logic and questionnaires were aligned with the client’s research objectives, contributing to the overall success of the projects."
