@@ -31,8 +31,13 @@
   },
   {
     "name": "React",
-    "image": "https://i.ibb.co.com/KL6XByh/react.png",
+    "image": "https://img.icons8.com/?size=80&id=3VGtaw5gCc8T&format=png",
     "image_dark": "https://i.ibb.co.com/27YDd1cW/react-dark.png"
+  },
+  {
+    "name": "Redux",
+    "image": "https://img.icons8.com/?size=80&id=3VGtaw5gCc8T&format=png",
+    "image_dark": "https://img.icons8.com/?size=50&id=A6r5yddU9uA0&format=png"
   },
   {
     "name": "Node.js",
@@ -48,8 +53,7 @@
     "name": "MongoDB",
     "image": "https://i.ibb.co.com/VQpcJZY/mongoDB.png",
     "image_dark": "https://i.ibb.co.com/PGVwVPD6/mongo-DB-dark.png"
-  }
-  ,
+  },
   {
     "name": "PostgreSQL",
     "image": "https://img.icons8.com/?size=48&id=38561&format=png",
