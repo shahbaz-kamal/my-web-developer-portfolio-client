@@ -81,7 +81,7 @@ const ProjectCard = ({ project }) => {
           {projectTitle}
         </h2>
         <p className=" text-light-color-text dark:text-dark-color-text ">
-          {projectDescription.slice(0, 200)}....{" "}
+          {projectDescription.slice(0, 100)}....{" "}
           <span className="font-bold text-light-accent dark:text-dark-primary">
             <Link to={`/view-details/${_id}`}>View Details </Link>
           </span>
@@ -107,11 +107,16 @@ const ProjectCard = ({ project }) => {
               Live Link
             </button>
           </a>
-          <a href={clientGitRepo} target="_blank">
+       {clientGitRepo &&    <a href={clientGitRepo} target="_blank">
             <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
               Git Client
             </button>
-          </a>
+          </a>}
+       {serverGitRepo &&    <a href={clientGitRepo} target="_blank">
+            <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">
+              Git Server
+            </button>
+          </a>}
           {/* {serverGitRepo && (
             <a href={serverGitRepo} target="_blank">
               <button className="btn btn-primary bg-light-accent border-light-accent dark:bg-dark-primary dark:border-dark-primary text-light-color-text hover:bg-light-secondary hover:border-light-secondary  dark:hover:bg-dark-accent dark:hover:border-dark-accent transition duration-300 ease-in-out">

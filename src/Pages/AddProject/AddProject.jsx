@@ -59,6 +59,7 @@ const AddProject = () => {
       url,
       description: imageDescription[index],
     }));
+    const type=e.target.type.value
     const newProjectData = {
       projectTitle,
       projectDescription,
@@ -71,7 +72,7 @@ const AddProject = () => {
       improvements,
       publicationDate: publishedDate,
       features,
-      technologyUsed,
+      technologyUsed,type
     };
     console.log(imageAndDescriptions);
     axiosSecure
@@ -159,7 +160,7 @@ const AddProject = () => {
                 type="url"
                 placeholder="Client Side Git Repo"
                 className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
-                required
+               
               />
             </div>
             <div className="form-control">
@@ -219,36 +220,71 @@ const AddProject = () => {
                 required
               >
                 <option value="">Select Technologies</option>
-                <option value="https://i.ibb.co.com/MZ9LksT/html.png">
+                <option value="https://i.ibb.co.com/wZHh1KGJ/icons8-html-5-100.png">
                   HTML
                 </option>
-                <option value="https://i.ibb.co.com/1zyXkLr/css-3.png">
+                <option value="https://i.ibb.co.com/zVxWcX1D/css-3-1.png">
                   CSS
                 </option>
-                <option value="https://i.ibb.co.com/XkWsbQDL/tailwind.png">
+                <option value="https://i.ibb.co.com/zVKJY9KR/icons8-tailwind-css-96.png">
                   Tailwind CSS
                 </option>
-                <option value="https://i.ibb.co.com/4Mvj996/js.png">
+                <option value="https://i.ibb.co.com/84PnDYWS/js-1.png">
                   JavaScript
+                </option>
+                <option value="https://i.ibb.co.com/yFgT8ftf/typescript.png">
+                  TypeScript
+                </option>
+                <option value="https://i.ibb.co.com/tTdS8wN9/icons8-redux-480.png">
+                  Redux
                 </option>
                 <option value="https://i.ibb.co.com/C5hww77M/firebase.png">
                   FireBase
                 </option>
-                <option value="https://i.ibb.co.com/KL6XByh/react.png">
+                <option value="https://i.ibb.co.com/HfWYSJ4M/passport-logo-png-seeklogo-273785.png">
+                  Passport.js
+                </option>
+                <option value="https://i.ibb.co.com/KpNvmBZb/atom-1.png">
                   React
                 </option>
-                <option value="https://i.ibb.co.com/6ZMC66j/nodejs.png">
+                <option value="https://i.ibb.co.com/dwZyXXVJ/icons8-node-js-96.png">
                   Node.js
                 </option>
-                <option value="https://i.ibb.co.com/6JyLGWnk/express-color.png">
+                <option value="https://i.ibb.co.com/b50NgnqW/icons8-express-js-96-2.png">
                   Express.js
                 </option>
-                <option value="https://i.ibb.co.com/VQpcJZY/mongoDB.png">
+                <option value="https://i.ibb.co.com/spWqfSpk/icons8-mongodb-100.png">
                   MongoDB
+                </option>
+                <option value="https://i.ibb.co.com/6RZWk3qr/mongoose-black.png">
+                  Mongoose
+                </option>
+                <option value="https://i.ibb.co.com/BHhCC6gR/postgre.png">
+                  PostgreSQL
                 </option>
                 <option value="https://img.icons8.com/?size=80&id=t9fIqVSKsYSK&format=png">
                   Stripe
                 </option>
+              </select>
+            </div>
+            <div className="form-control">
+              <select
+                onChange={handleTechnologyUsed}
+                name="type"
+                className="input input-bordered focus:outline-none focus:ring-2 focus:ring-light-primary-20 focus:border-light-primary-20 dark:focus:ring-dark-primary dark:focus:border-dark-primary"
+                required
+              >
+                <option value="">Select Type</option>
+                <option value="Full Stack">
+                Full Stack
+                </option>
+                <option value="Frontend">
+                Frontend
+                </option>
+                <option value="Backened">
+                Backened
+                </option>
+              
               </select>
             </div>
             <div className="form-control mt-6 col-span-2">

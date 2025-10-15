@@ -1,62 +1,73 @@
 [
   {
     "name": "HTML",
-    "image": "https://i.ibb.co.com/MZ9LksT/html.png",
-    "image_dark": "https://i.ibb.co.com/vCjfBj5V/html-dark.png"
+ 
+    "image": "https://i.ibb.co.com/wZHh1KGJ/icons8-html-5-100.png",
+    "image_dark": "https://i.ibb.co.com/1YXzkJYB/icons8-html-5-100-1.png"
   },
   {
     "name": "CSS",
-    "image": "https://i.ibb.co.com/1zyXkLr/css-3.png",
-    "image_dark": "https://i.ibb.co.com/sJvt0j1s/css-dark.png"
+    "image": "https://i.ibb.co.com/zVxWcX1D/css-3-1.png",
+    "image_dark": "https://i.ibb.co.com/mFV6c8Bx/css-3-2.png"
   },
   {
     "name": "TailWind CSS",
-    "image": "https://i.ibb.co.com/XkWsbQDL/tailwind.png",
-    "image_dark": "https://i.ibb.co.com/bjm3LDzk/tailwind-dark.png"
+    "image": "https://i.ibb.co.com/zVKJY9KR/icons8-tailwind-css-96.png",
+    "image_dark": "https://i.ibb.co.com/5hCVnZ1D/icons8-tailwind-css-96-1.png"
   },
   {
     "name": "JavaScript",
     "image": "https://i.ibb.co.com/4Mvj996/js.png",
-    "image_dark": "https://i.ibb.co.com/4RwvC7Q1/js-dark.png"
+    "image_dark": "https://i.ibb.co.com/n5sHwn8/js-2.png"
   },
   {
     "name": "Typescript",
-    "image": "https://img.icons8.com/?size=48&id=uJM6fQYqDaZK&format=png",
-    "image_dark": "https://img.icons8.com/?size=50&id=cHBUT9SmrD2V&format=png"
+    "image": "https://i.ibb.co.com/yFgT8ftf/typescript.png",
+    "image_dark": "https://i.ibb.co.com/FqzgmgK2/typescript-1.png"
   },
   {
     "name": "Firebase",
-    "image": "https://i.ibb.co.com/C5hww77M/firebase.png",
-    "image_dark": "https://i.ibb.co.com/99JwhJkD/firebase-dark.png"
+    "image": "https://i.ibb.co.com/DPk4RZbX/icons8-firebase-480.png",
+    "image_dark": "https://i.ibb.co.com/8nqhJsC5/icons8-firebase-480-1.png"
+  },
+  {
+    "name": "Passport.Js",
+    "image": "https://i.ibb.co.com/HfWYSJ4M/passport-logo-png-seeklogo-273785.png",
+    "image_dark": "https://i.ibb.co.com/HfWYSJ4M/passport-logo-png-seeklogo-273785.png"
   },
   {
     "name": "React",
-    "image": "https://img.icons8.com/?size=80&id=3VGtaw5gCc8T&format=png",
-    "image_dark": "https://i.ibb.co.com/27YDd1cW/react-dark.png"
+    "image": "https://i.ibb.co.com/KpNvmBZb/atom-1.png",
+    "image_dark": "https://i.ibb.co.com/NnCxs8MS/atom.png"
   },
   {
     "name": "Redux",
-    "image": "https://img.icons8.com/?size=80&id=3VGtaw5gCc8T&format=png",
-    "image_dark": "https://img.icons8.com/?size=50&id=A6r5yddU9uA0&format=png"
+    "image": "https://i.ibb.co.com/tTdS8wN9/icons8-redux-480.png",
+    "image_dark": "https://i.ibb.co.com/k6wgthSq/icons8-redux-480-1.png"
   },
   {
     "name": "Node.js",
-    "image": "https://i.ibb.co.com/6ZMC66j/nodejs.png",
-    "image_dark": "https://i.ibb.co.com/LhxtGMXB/node-dark.png"
+    "image": "https://i.ibb.co.com/dwZyXXVJ/icons8-node-js-96.png",
+    "image_dark": "https://i.ibb.co.com/fVrmy5KH/icons8-node-js-96-1.png"
   },
   {
     "name": "Express.js",
-    "image": "https://i.ibb.co.com/6JyLGWnk/express-color.png",
-    "image_dark": "https://i.ibb.co.com/CpLF1T1W/express-dark.png"
+    "image": "https://i.ibb.co.com/5hywkYBx/icons8-express-js-96-1.png",
+    "image_dark": "https://i.ibb.co.com/b50NgnqW/icons8-express-js-96-2.png"
   },
   {
     "name": "MongoDB",
-    "image": "https://i.ibb.co.com/VQpcJZY/mongoDB.png",
+    "image": "https://i.ibb.co.com/spWqfSpk/icons8-mongodb-100.png",
     "image_dark": "https://i.ibb.co.com/PGVwVPD6/mongo-DB-dark.png"
   },
   {
+    "name": "Mongoose",
+    "image": "https://i.ibb.co.com/6RZWk3qr/mongoose-black.png",
+    "image_dark": "https://i.ibb.co.com/CKr5L5P3/icons8-mongoose-480-1.png"
+  },
+  {
     "name": "PostgreSQL",
-    "image": "https://img.icons8.com/?size=48&id=38561&format=png",
-    "image_dark": "https://img.icons8.com/?size=50&id=36440&format=png"
+    "image": "https://i.ibb.co.com/BHhCC6gR/postgre.png",
+    "image_dark": "https://i.ibb.co.com/zWJXcGKx/postgre-1.png"
   }
 ]
