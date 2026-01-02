@@ -265,6 +265,15 @@ const AddProject = () => {
                 <option value="https://img.icons8.com/?size=80&id=t9fIqVSKsYSK&format=png">
                   Stripe
                 </option>
+                <option value="https://sslcommerz.com/wp-content/uploads/2021/11/logo.png">
+                  SSLCOMMERZE
+                </option>
+                <option value="https://zod.dev/_next/image?url=%2Flogo%2Flogo-glow.png&w=256&q=100">
+                  Zod
+                </option>
+                <option value="https://i0.wp.com/community.nodemailer.com/wp-content/uploads/2015/10/n2-2.png?w=422&ssl=1">
+                  Nodemailer
+                </option>
               </select>
             </div>
             <div className="form-control">

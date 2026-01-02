@@ -97,21 +97,21 @@ const Navbar = () => {
       >  <Fade triggerOnce={true} direction="left">
         <li className="px-2">About Me</li></Fade>
       </HashLink>
-      {/* <HashLink
-        to="#experience"
-        onClick={(e) => {
-          e.preventDefault(); // Prevent default HashLink behavior
-          scrollToSection("experience");
-          navigate("/");
-        }}
-        className={`${
-          activeSection === "experience"
-            ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
-            : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
-        }`}
-      >  <Fade triggerOnce={true} direction="left">
-        <li className="px-2">Experience</li></Fade>
-      </HashLink> */}
+    <HashLink
+      to="#experience"
+      onClick={(e) => {
+        e.preventDefault(); // Prevent default HashLink behavior
+        scrollToSection("experience");
+        navigate("/");
+      }}
+      className={`${
+        activeSection === "experience"
+          ? "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+          : "text-lg   px-2 hover:bg-light-accent hover:text-light-color-text  p-1 rounded-full border border-light-accent dark:border-dark-secondary text-light-accent font-bold dark:text-dark-color-text dark:hover:bg-dark-secondary"
+      }`}
+    >  <Fade triggerOnce={true} direction="left">
+      <li className="px-2">Experience</li></Fade>
+    </HashLink>
       <HashLink
         to="/#education"
         onClick={(e) => {

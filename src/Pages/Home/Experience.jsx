@@ -16,6 +16,31 @@ const Experience = () => {
         <Title title={"Work Experience"} subTitle={"Skills in Action"}></Title>
       </header>
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+
+      <Fade triggerOnce={true} direction="left">
+          <ExperienceCard
+            designation={"Full Stack Developer "}
+            companyName={"Innovative Technology & Engineering"}
+            from={"December 2025"}
+            to={"Present"}
+            location={"KA-271, Pragati Sarani, Dhaka 1229"}
+            details={
+              "Contributed to an educational platform designed to enhance the assignment workflow. Engineered a solution for teachers to assign PDF-based tasks, with an integrated AI module that transforms these into consumable JSON data. Designed a system to provide students with adaptive practice questions, directly addressing areas of weakness identified by their previous attempts, thereby improving their learning outcomes."
+            }
+          ></ExperienceCard>
+        </Fade>
+      <Fade triggerOnce={true} direction="left">
+          <ExperienceCard
+            designation={"Full Stack Developer (Remote)"}
+            companyName={"Noverse Inc."}
+            from={"June 2025"}
+            to={"July 2025"}
+            location={" 674A JURONG WEST STREET 65 , #04-70 , SINGAPORE "}
+            details={
+              "Contributed to an educational platform designed to enhance the assignment workflow. Engineered a solution for teachers to assign PDF-based tasks, with an integrated AI module that transforms these into consumable JSON data. Designed a system to provide students with adaptive practice questions, directly addressing areas of weakness identified by their previous attempts, thereby improving their learning outcomes."
+            }
+          ></ExperienceCard>
+        </Fade>
         <Fade triggerOnce={true} direction="left">
           <ExperienceCard
             designation={"Data Artist"}
@@ -28,18 +53,7 @@ const Experience = () => {
             }
           ></ExperienceCard>
         </Fade>
-        {/* <Fade triggerOnce={true} direction="left">
-          <ExperienceCard
-            designation={"Full Stack Developing Trainee (Remote)"}
-            companyName={"Noverse Inc."}
-            from={"June 2025"}
-            to={"Present"}
-            location={" 674A JURONG WEST STREET 65 , #04-70 , SINGAPORE "}
-            details={
-              "Contributing to an educational platform designed to enhance the assignment workflow. Engineered a solution for teachers to assign PDF-based tasks, with an integrated AI module that transforms these into consumable JSON data. Designed a system to provide students with adaptive practice questions, directly addressing areas of weakness identified by their previous attempts, thereby improving their learning outcomes."
-            }
-          ></ExperienceCard>
-        </Fade> */}
+     
         <Fade triggerOnce={true} direction="right">
           <ExperienceCard
             designation={"Adjunct Lecturer"}
